@@ -7,7 +7,7 @@ export default function Portfoliio() {
             <style jsx>{`
             .container {
                 min-height: 50rem;
-                background-color: black;
+                background-color: #EEEEEE;
                 text-align: center;
                 padding: 1rem 2rem;
             }

@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import Navbar from './navbar';
 
 export default function Typewriter() {
-
     const TxtType = function (el, toRotate, period) {
         this.toRotate = toRotate;
         this.el = el;
@@ -59,56 +57,22 @@ export default function Typewriter() {
         css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
         document.body.appendChild(css);
     });
-
     return (
-        <div className="container">
-            <Navbar pageTitle="Homepage"></Navbar>
-            <div className="project-showcase">
-                <div className="showcase-card">
-                </div>
-            </div>
-            <div className="header-title">
-                <h1 className="title">Software Developer</h1>
-                <h1>
-                    <a href="#" className="typewrite" data-period="2000" data-type='[ "Hello my name is Carlos Flores", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
-                        <span className="wrap"></span>
-                    </a>
-                </h1>
-            </div>
-
+        <div>
+            <h1>
+                <a href="#" className="typewrite" data-period="2000" data-type='[ "Hello my name is Carlos Flores", "I am Creative.", "I Love Design.", "I Love to Develop." ]'>
+                    <span className="wrap"></span>
+                </a>
+            </h1>
             <style jsx>{`
-                .container {
-                    display: flex;
-                    flex-wrap:wrap;
-                    min-height: 100vh;
-                    background-image: url(/img/mountain.jpg);
-                    background-repeat: no-repeat;
-                    background-size:  cover;
-                    background-position: bottom ;
-                }
-                .project-showcase {
-                    text-align: center;
-                    width: 100%;
-                }
-                .showcase-card {
-                    height: 15rem;
-                    width: 25rem;
-                    margin: 1rem auto;
-                    background-color: white;
-                    border-radius: 0.2rem;
-                }
-                .header-title {
-                    width: 100%;
-                    text-align: center;
-                }
-                .typewrite {
-                    color: white;
+            .typewrite {
+                color: white;
                     font-size: 1.2rem;
                     text-decoration: none;
                     transition: all 0.2s ease;
                 }
                 h1 {
-                    margin: 0px;
+                margin: 0px;
                     color: white;
                 }
             `}</style>

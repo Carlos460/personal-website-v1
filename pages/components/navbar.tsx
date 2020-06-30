@@ -1,14 +1,34 @@
 import Link from 'next/link'
 import { AppProps } from 'next/app'
 import { type } from 'os';
+import { useEffect } from 'react';
 
 type NavbarProps = {
     pageTitle: string
 }
 
 export default function Navbar(props: NavbarProps) {
+
+    useEffect(() => {
+        const nav = document.querySelector('.navbar');
+
+        const turnTansparent = () => {
+            console.log('changing style to transparent');
+            nav.classList.remove('show-background');
+            nav.classList.add('transparent');
+        }
+        const showBackground = () => {
+            nav.classList.remove('transparent');
+            nav.classList.add('show-background');
+        }
+
+        window.onscroll = function () {
+            let changeStyle = window.pageYOffset < 150 ? turnTansparent() : showBackground();
+        }
+    });
+
     return (
-        <div className="container">
+        <div className="navbar transparent">
             <h1 className="brand-name">{props.pageTitle}</h1>
 
             <ul className="link-list">
@@ -18,12 +38,18 @@ export default function Navbar(props: NavbarProps) {
             </ul>
 
             <style jsx>{`
-            .container {
-                background-color: transparent;
+            .navbar {
+                width: 100%;
                 display: flex;
-                height: 4rem;
-                position: sticky;
-                top: 0rem
+                position: fixed;
+                top: 0rem;
+                transition: background-color 0.2s;
+            }
+            .transparent {
+                background-color: transparent;
+            }
+            .show-background {
+                background-color: #68AEC8;
             }
             .brand-name {
                 margin: 0.5rem 1rem;
@@ -39,6 +65,12 @@ export default function Navbar(props: NavbarProps) {
                 margin: 1.5rem 1rem;
                 text-decoration: none;
                 color: white;
+            }
+            .link::after{
+
+            }
+            .link::after:hover {
+                background-color:white;
             }
 
             @media only screen and (max-width: 600px){
