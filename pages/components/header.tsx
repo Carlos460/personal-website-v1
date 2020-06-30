@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Navbar from './navbar';
 
 export default function Typewriter() {
 
@@ -25,7 +26,7 @@ export default function Typewriter() {
         this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
 
         const that = this;
-        let delta = 200 - Math.random() * 100;
+        let delta = 250 - Math.random() * 100;
 
         if (this.isDeleting) { delta /= 2; }
 
@@ -61,10 +62,9 @@ export default function Typewriter() {
 
     return (
         <div className="container">
+            <Navbar pageTitle="Homepage"></Navbar>
             <div className="project-showcase">
-                <h1 className="showcase-title">Project showcase</h1>
                 <div className="showcase-card">
-
                 </div>
             </div>
             <div className="header-title">
@@ -79,25 +79,27 @@ export default function Typewriter() {
             <style jsx>{`
                 .container {
                     display: flex;
-                    background-color: #2B2D42;
-                    height: 50rem
+                    flex-wrap:wrap;
+                    min-height: 100vh;
+                    background-image: url(/img/mountain.jpg);
+                    background-repeat: no-repeat;
+                    background-size:  cover;
+                    background-position: bottom ;
                 }
                 .project-showcase {
                     text-align: center;
-                    width: 50%;
-                    height: 100%;
-                }
-                .showcase-title{
-                    margin: 1rem 0rem;
+                    width: 100%;
                 }
                 .showcase-card {
                     height: 15rem;
-                    width: 8rem;
+                    width: 25rem;
+                    margin: 1rem auto;
                     background-color: white;
                     border-radius: 0.2rem;
                 }
                 .header-title {
-                    width: 50%;
+                    width: 100%;
+                    text-align: center;
                 }
                 .typewrite {
                     color: white;

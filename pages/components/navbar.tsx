@@ -12,16 +12,18 @@ export default function Navbar(props: NavbarProps) {
             <h1 className="brand-name">{props.pageTitle}</h1>
 
             <ul className="link-list">
-                <Link href="#contact"><a className="link">Contact</a></Link>
                 <Link href="#portfolio"><a className="link">Porfolio</a></Link>
+                <Link href="#contact"><a className="link">Contact</a></Link>
                 <Link href="/resume"><a className="link">Resume</a></Link>
             </ul>
 
             <style jsx>{`
             .container {
-                background-color: var(--primary-color);
+                background-color: transparent;
                 display: flex;
                 height: 4rem;
+                position: sticky;
+                top: 0rem
             }
             .brand-name {
                 margin: 0.5rem 1rem;
@@ -34,7 +36,7 @@ export default function Navbar(props: NavbarProps) {
                 width: 20rem;
             }
             .link {
-                margin: 1rem 1rem;
+                margin: 1.5rem 1rem;
                 text-decoration: none;
                 color: white;
             }
