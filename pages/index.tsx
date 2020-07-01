@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import Portfolio from './components/portfolio';
-import Contact from './components/contact';
-import Typewriter from './components/typewriter'
-import Navbar from './components/navbar';
+import Head from "next/head";
+import Portfolio from "./components/portfolio";
+import Contact from "./components/contact";
+import Typewriter from "./components/typewriter";
+import Navbar from "./components/navbar";
 
 export default function Home() {
   return (
@@ -16,8 +16,7 @@ export default function Home() {
         <Navbar pageTitle="Homepage"></Navbar>
         <div className="header">
           <div className="project-showcase">
-            <div className="showcase-card">
-            </div>
+            <div className="showcase-card"></div>
           </div>
           <div className="header-title">
             <h1 className="title">Software Developer</h1>
@@ -27,9 +26,7 @@ export default function Home() {
         <Portfolio></Portfolio>
         <Contact></Contact>
       </main>
-      <footer>
-
-      </footer>
+      <footer></footer>
       <style jsx>{`
         .header {
           padding-top: 5rem;
@@ -39,31 +36,31 @@ export default function Home() {
           background-size: cover;
           background-position: bottom;
           display: flex;
-          flex-wrap:wrap;
+          flex-wrap: wrap;
         }
         .project-showcase {
-            text-align: center;
-            width: 100%;
+          text-align: center;
+          width: 100%;
         }
         .showcase-card {
-            height: 15rem;
-            width: 25rem;
-            margin: 1rem auto;
-            background-color: white;
-            border-radius: 0.2rem;
+          height: 15rem;
+          width: 25rem;
+          margin: 1rem auto;
+          background-color: white;
+          border-radius: 0.2rem;
         }
         .header-title {
-            width: 100%;
-            text-align: center;
+          width: 100%;
+          text-align: center;
         }
         h1 {
-            color: white
+          color: white;
         }
       `}</style>
 
       <style jsx global>{`
         :root {
-          --primary-color: #4381C1;
+          --primary-color: #4381c1;
         }
         html,
         body {
@@ -80,6 +77,6 @@ export default function Home() {
           margin: 0;
         }
       `}</style>
-    </div >
-  )
+    </div>
+  );
 }
