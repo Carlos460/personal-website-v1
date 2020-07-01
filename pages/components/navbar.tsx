@@ -27,18 +27,18 @@ export default function Navbar(props: NavbarProps) {
   });
 
   return (
-    <div className="navbar transparent">
-      <h1 className="brand-name">{props.pageTitle}</h1>
+    <div className='navbar transparent'>
+      <h1 className='brand-name'>{props.pageTitle}</h1>
 
-      <ul className="link-list">
-        <Link href="#portfolio">
-          <a className="link">Porfolio</a>
+      <ul className='link-list'>
+        <Link href='#portfolio'>
+          <a className='link'>Porfolio</a>
         </Link>
-        <Link href="#contact">
-          <a className="link">Contact</a>
+        <Link href='#contact'>
+          <a className='link'>Contact</a>
         </Link>
-        <Link href="/resume">
-          <a className="link">Resume</a>
+        <Link href='/resume'>
+          <a className='link'>Resume</a>
         </Link>
       </ul>
 
@@ -79,12 +79,13 @@ export default function Navbar(props: NavbarProps) {
           bottom: 1.2rem;
           display: block;
           background-color: white;
-          width: 0rem;
+          width: 3.8rem;
           height: 0.2rem;
-          transition: width 0.3s ease-in;
+          opacity: 0;
+          transition: opacity 0.2s ease-in;
         }
         .link:hover::after {
-          width: 3.8rem;
+          opacity: 1;
         }
 
         @media only screen and (max-width: 600px) {

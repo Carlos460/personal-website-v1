@@ -9,17 +9,17 @@ export default function Home() {
     <div>
       <Head>
         <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <main>
-        <Navbar pageTitle="Homepage"></Navbar>
-        <div className="header">
-          <div className="project-showcase">
-            <div className="showcase-card"></div>
+        <Navbar pageTitle='Homepage'></Navbar>
+        <div className='header'>
+          <div className='project-showcase'>
+            <div className='showcase-card'></div>
           </div>
-          <div className="header-title">
-            <h1 className="title">Software Developer</h1>
+          <div className='header-title'>
+            <h1 className='title'>Software Developer</h1>
             <Typewriter></Typewriter>
           </div>
         </div>
