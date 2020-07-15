@@ -13,13 +13,13 @@ export default function Home() {
       </Head>
 
       <main>
-        <Navbar pageTitle='Homepage'></Navbar>
+        <Navbar pageTitle='Carlos Flores'></Navbar>
         <div className='header'>
           <div className='project-showcase'>
             <div className='showcase-card'></div>
           </div>
           <div className='header-title'>
-            <h1 className='title'>Software Developer</h1>
+            <h1 className='title'>Software Developer | Front End</h1>
             <Typewriter></Typewriter>
           </div>
         </div>
