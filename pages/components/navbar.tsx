@@ -49,6 +49,7 @@ export default function Navbar(props: NavbarProps) {
           position: fixed;
           top: 0rem;
           transition: background-color 0.2s;
+          z-index: 5;
         }
         .transparent {
           background-color: transparent;

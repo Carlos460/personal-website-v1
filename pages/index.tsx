@@ -59,6 +59,7 @@ export default function Home() {
       `}</style>
 
       <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
         :root {
           --primary-color: #4381c1;
         }
@@ -72,6 +73,7 @@ export default function Home() {
             sans-serif;
         }
         * {
+          font-family: 'Roboto', sans-serif;
           box-sizing: border-box;
           padding: 0;
           margin: 0;
