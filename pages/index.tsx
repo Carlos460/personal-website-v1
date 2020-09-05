@@ -1,26 +1,22 @@
 import Head from "next/head";
 import Portfolio from "./components/portfolio";
 import Contact from "./components/contact";
-import Typewriter from "./components/typewriter";
 import Navbar from "./components/navbar";
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>Create Next App</title>
-        <link rel='icon' href='/favicon.ico' />
+        <title>Carlos Flores</title>
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <Navbar pageTitle='Carlos Flores'></Navbar>
-        <div className='header'>
-          <div className='project-showcase'>
-            <div className='showcase-card'></div>
-          </div>
-          <div className='header-title'>
-            <h1 className='title'>Software Developer | Front End</h1>
-            <Typewriter></Typewriter>
+        <Navbar pageTitle="Carlos Flores"></Navbar>
+        <div className="header">
+          <div className="header-image"></div>
+          <div className="header-title">
+            <h1 className="title">Software Developer | Front End</h1>
           </div>
         </div>
         <Portfolio></Portfolio>
@@ -31,23 +27,28 @@ export default function Home() {
         .header {
           padding-top: 5rem;
           min-height: 100vh;
-          background-image: url(/img/mountain.jpg);
+          background-image: url(/img/background.jpg);
+          transform: deg(180);
           background-repeat: no-repeat;
           background-size: cover;
           background-position: bottom;
           display: flex;
           flex-wrap: wrap;
         }
-        .project-showcase {
-          text-align: center;
+        .header:after {
+          content: "";
+          position: absolute;
+          z-index: 1;
+          bottom: 0;
+          left: 0;
+          pointer-events: none;
+          background-image: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 1) 90%
+          );
           width: 100%;
-        }
-        .showcase-card {
-          height: 15rem;
-          width: 25rem;
-          margin: 1rem auto;
-          background-color: white;
-          border-radius: 0.2rem;
+          height: 8em;
         }
         .header-title {
           width: 100%;
@@ -59,7 +60,7 @@ export default function Home() {
       `}</style>
 
       <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+        @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
         :root {
           --primary-color: #4381c1;
         }
@@ -73,7 +74,7 @@ export default function Home() {
             sans-serif;
         }
         * {
-          font-family: 'Roboto', sans-serif;
+          font-family: "Inconsolata", monospace;
           box-sizing: border-box;
           padding: 0;
           margin: 0;

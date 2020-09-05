@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <div>
       <div className="container">
-        <h1 id="contact">Contact Me</h1>
+        <h1 id="contact">Want to get in touch?</h1>
       </div>
       <style>{`
         .container {

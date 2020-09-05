@@ -29,7 +29,9 @@ export default function ProjectCard(props) {
         className="project-card"
       >
         <div className="overlay">
-          <h1>{props.title}</h1>
+          <div className="card-content">
+            <h1>{props.title}</h1>
+          </div>
         </div>
       </div>
       <div className="outer-modal" ref={Modal}>
@@ -42,26 +44,30 @@ export default function ProjectCard(props) {
       background-image: url(/img/tree.jpg);
       background-size: cover;
       color: white;
-      border-radius: 0.2rem;
-      margin: 1rem;
-      height: 15rem;
-      width: 25rem;
+      padding:0.5rem;
+      height: 30rem;
+      width: 100%;
       transition: transform 0.2s ease;
       overflow: hidden;
+      position:relative;
     }
     .project-card:hover {
       cursor: pointer;
-      transform: scale(1.1);
     }
     .project-card:hover .overlay {
-      opacity: 0;
+      background-color: rgba(0,0,0,0.0);
     }
     .overlay {
       background-color: rgba(0,0,0,0.5);
-      padding: 1rem;
+      position: absolute;
+      top: 0px;
+      left: 0px;
       height: 100%;
       width: 100%;
-      transition: opacity 0.3s ease;
+      transition: background-color 0.3s ease;
+    }
+    .card-content{
+      padding: 0.5rem;
     }
     .outer-modal {
       display: grid;
