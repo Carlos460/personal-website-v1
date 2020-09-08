@@ -6,7 +6,7 @@ type NavbarProps = {
 };
 
 export default function Navbar(props: NavbarProps) {
-  const [navbarHidden, setNavbarHidden] = useState("hide-navbar");
+  const [navbarHidden, setNavbarHidden] = useState("");
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
