@@ -1,46 +1,38 @@
 import Link from "next/link";
-import { AppProps } from "next/app";
-import { type } from "os";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 type NavbarProps = {
   pageTitle: string;
 };
 
 export default function Navbar(props: NavbarProps) {
+  const [navbarHidden, setNavbarHidden] = useState("hide-navbar");
+
   useEffect(() => {
-    const nav = document.querySelector(".navbar");
-
-    const turnTansparent = () => {
-      nav.classList.remove("show-background");
-      nav.classList.add("transparent");
-    };
-    const showBackground = () => {
-      nav.classList.remove("transparent");
-      nav.classList.add("show-background");
-    };
-
-    window.onscroll = function () {
-      let changeStyle =
-        window.pageYOffset < 150 ? turnTansparent() : showBackground();
-    };
+    window.addEventListener("scroll", () => {
+      const lastScrollPosition = window.scrollY;
+      const navbarState = lastScrollPosition < 15 ? setNavbarHidden("") : setNavbarHidden("hide-navbar");
+    });
   });
 
-  return (
-    <div className='navbar transparent'>
-      <h1 className='brand-name'>{props.pageTitle}</h1>
 
-      <ul className='link-list'>
-        <Link href='#portfolio'>
-          <a className='link'>Porfolio</a>
-        </Link>
-        <Link href='#contact'>
-          <a className='link'>Contact</a>
-        </Link>
-        <Link href='/resume'>
-          <a className='link'>Resume</a>
-        </Link>
-      </ul>
+  useEffect(() => { });
+  return (
+    <div>
+      <div className={`navbar ${navbarHidden}`}>
+        <h1 className='brand-name'>{props.pageTitle}</h1>
+        <ul className='link-list'>
+          <Link href='#portfolio'>
+            <a className='link'>Porfolio</a>
+          </Link>
+          <Link href='#contact'>
+            <a className='link'>Contact</a>
+          </Link>
+          <Link href='/resume'>
+            <a className='link'>Resume</a>
+          </Link>
+        </ul>
+      </div>
 
       <style jsx>{`
         .navbar {
@@ -48,14 +40,11 @@ export default function Navbar(props: NavbarProps) {
           display: flex;
           position: fixed;
           top: 0rem;
-          transition: background-color 0.2s;
-          z-index: 5;
+          transition: all 0.2s;
+          background-color: #transparent;
         }
-        .transparent {
-          background-color: transparent;
-        }
-        .show-background {
-          background-color: #68aec8;
+        .hide-navbar {
+          top: -5rem;
         }
         .brand-name {
           margin: 0.5rem 1rem;
@@ -65,30 +54,20 @@ export default function Navbar(props: NavbarProps) {
           list-style: none;
           margin: 0rem 5rem 0rem auto;
           display: flex;
-          width: 20rem;
+          width: 30rem;
           justify-content: space-between;
         }
+        
         .link {
+          height:3rem;
+          width: 8rem;
           align-text: center;
-          margin: 1.5rem 1rem;
+          margin: 0.5rem 2rem;
+          padding: 0.8rem 0rem;
           text-decoration: none;
           color: white;
+          text-align: center;
         }
-        .link::after {
-          content: "";
-          position: absolute;
-          bottom: 1.2rem;
-          display: block;
-          background-color: white;
-          width: 3.8rem;
-          height: 0.2rem;
-          opacity: 0;
-          transition: opacity 0.2s ease-in;
-        }
-        .link:hover::after {
-          opacity: 1;
-        }
-
         @media only screen and (max-width: 600px) {
           .link-list {
             margin: 0rem 0rem 0rem auto;

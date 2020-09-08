@@ -2,6 +2,8 @@ import Head from "next/head";
 import Portfolio from "./components/portfolio";
 import Contact from "./components/contact";
 import Navbar from "./components/navbar";
+import Hamburger from "./components/hamburger";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -12,11 +14,20 @@ export default function Home() {
       </Head>
 
       <main>
+        <Hamburger></Hamburger>
         <Navbar pageTitle="Carlos Flores"></Navbar>
         <div className="header">
           <div className="header-image"></div>
-          <div className="header-title">
-            <h1 className="title">Software Developer | Front End</h1>
+          <div className="header-content">
+            <div className="text-container">
+              <h1 className="header-title">Front End | Software Developer</h1>
+              <p>Proficient with javacript and working with React.js</p>
+            </div>
+            <div className="button-container">
+              <Link href="#portfolio">
+                <button className="header-button">LATEST PROJECTS!</button>
+              </Link>
+            </div>
           </div>
         </div>
         <Portfolio></Portfolio>
@@ -28,12 +39,10 @@ export default function Home() {
           padding-top: 5rem;
           min-height: 100vh;
           background-image: url(/img/background.jpg);
-          transform: deg(180);
+          background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
-          background-position: bottom;
           display: flex;
-          flex-wrap: wrap;
         }
         .header:after {
           content: "";
@@ -50,12 +59,42 @@ export default function Home() {
           width: 100%;
           height: 8em;
         }
-        .header-title {
+        .header-content {
+          width: 60rem;
+          height: 30rem;
+          margin: auto;
+        }
+        .text-container {
           width: 100%;
           text-align: center;
+          color: white
         }
-        h1 {
-          color: white;
+        .header-title{ 
+          font-size: 4rem;
+        }
+        .text-container > p{
+          font-size: 1.8rem;
+        }
+        .button-container {
+          margin: 2rem auto;
+          display: flex;
+          justify-content: center;
+        }
+        .header-button {
+          height: 4rem;
+          width: 12rem;
+          font-size: 1rem;
+          outline: none;
+          border:solid 2px #fff;
+          background: transparent;
+          color: #fff !important;
+          transition: all 0.2s ease;
+        }
+        .header-button:hover{
+          cursor: pointer;
+          border:solid 2px transparent;
+          background: #fff;
+          color: #1f1f1f !important;
         }
       `}</style>
 

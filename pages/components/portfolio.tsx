@@ -4,14 +4,14 @@ export default function Portfoliio() {
   return (
     <div>
       <div className="container" id="portfolio">
-        <h1>Featuring my latest Projects...</h1>
+        <h1>Featuring my latest projects...</h1>
         <div className="project-holder">
           <div className="feature-area">
-            <ProjectCard title="task-it"></ProjectCard>
+            <ProjectCard title="Punity"></ProjectCard>
           </div>
           <div className="projects">
             <ProjectCard title="moon-base"></ProjectCard>
-            <ProjectCard title="personal-website"></ProjectCard>
+            <ProjectCard title="Task-it"></ProjectCard>
           </div>
         </div>
       </div>
