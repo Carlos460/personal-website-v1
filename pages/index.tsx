@@ -1,21 +1,15 @@
-import Head from "next/head";
-import Portfolio from "./components/portfolio";
-import Contact from "./components/contact";
-import Navbar from "./components/navbar";
-import Hamburger from "./components/hamburger";
+import Portfolio from "../_includes/portfolio";
+import Contact from "../_includes/contact";
+import Navbar from "../_includes/navbar";
+import Hamburger from "../_includes/hamburger";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>Carlos Flores</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main>
         <Hamburger></Hamburger>
-        <Navbar pageTitle="Carlos Flores"></Navbar>
+        <Navbar></Navbar>
         <div className="header">
           <div className="header-image"></div>
           <div className="header-content">
@@ -67,12 +61,12 @@ export default function Home() {
         .text-container {
           width: 100%;
           text-align: center;
-          color: white
+          color: white;
         }
-        .header-title{ 
+        .header-title {
           font-size: 4rem;
         }
-        .text-container > p{
+        .text-container > p {
           font-size: 1.8rem;
         }
         .button-container {
@@ -85,14 +79,14 @@ export default function Home() {
           width: 12rem;
           font-size: 1rem;
           outline: none;
-          border:solid 2px #fff;
+          border: solid 2px #fff;
           background: transparent;
           color: #fff !important;
           transition: all 0.2s ease;
         }
-        .header-button:hover{
+        .header-button:hover {
           cursor: pointer;
-          border:solid 2px transparent;
+          border: solid 2px transparent;
           background: #fff;
           color: #1f1f1f !important;
         }

@@ -1,35 +1,33 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-type NavbarProps = {
-  pageTitle: string;
-};
-
-export default function Navbar(props: NavbarProps) {
+export default function Navbar() {
   const [navbarHidden, setNavbarHidden] = useState("");
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const lastScrollPosition = window.scrollY;
-      const navbarState = lastScrollPosition < 15 ? setNavbarHidden("") : setNavbarHidden("hide-navbar");
+      const navbarState =
+        lastScrollPosition < 15
+          ? setNavbarHidden("")
+          : setNavbarHidden("hide-navbar");
     });
   });
 
-
-  useEffect(() => { });
+  useEffect(() => {});
   return (
     <div>
       <div className={`navbar ${navbarHidden}`}>
-        <h1 className='brand-name'>{props.pageTitle}</h1>
-        <ul className='link-list'>
-          <Link href='#portfolio'>
-            <a className='link'>Porfolio</a>
+        <h1 className="brand-name">Carlos Flores</h1>
+        <ul className="link-list">
+          <Link href="/projects">
+            <a className="link">Porfolio</a>
           </Link>
-          <Link href='#contact'>
-            <a className='link'>Contact</a>
+          <Link href="#contact">
+            <a className="link">Contact</a>
           </Link>
-          <Link href='/resume'>
-            <a className='link'>Resume</a>
+          <Link href="/resume">
+            <a className="link">Resume</a>
           </Link>
         </ul>
       </div>
@@ -57,9 +55,9 @@ export default function Navbar(props: NavbarProps) {
           width: 30rem;
           justify-content: space-between;
         }
-        
+
         .link {
-          height:3rem;
+          height: 3rem;
           width: 8rem;
           align-text: center;
           margin: 0.5rem 2rem;
