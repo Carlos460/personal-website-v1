@@ -16,11 +16,11 @@ export default function Blog(props) {
           paddingTop: "5rem",
         }}
       >
-        {props.posts.map(function (post, idx) {
+        {props.posts.map(function (project, idx) {
           return (
             <li key={idx}>
-              <Link href={"/projects/" + post.slug}>
-                <a>{post.title}</a>
+              <Link href={"/projects/" + project.slug}>
+                <a>{project.title}</a>
               </Link>
             </li>
           );

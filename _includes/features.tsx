@@ -7,11 +7,11 @@ export default function Portfoliio() {
         <h1>Featuring my latest projects...</h1>
         <div className="project-holder">
           <div className="feature-area">
-            <ProjectCard title="Punity"></ProjectCard>
+            <ProjectCard title="Punity" link="/"></ProjectCard>
           </div>
-          <div className="projects">
-            <ProjectCard title="moon-base"></ProjectCard>
-            <ProjectCard title="Task-it"></ProjectCard>
+          <div className="projects" >
+            <ProjectCard title="moon-base" link="/"></ProjectCard>
+            <ProjectCard title="Task-it" link="/"></ProjectCard>
           </div>
         </div>
       </div>

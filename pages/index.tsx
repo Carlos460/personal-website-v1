@@ -1,4 +1,6 @@
-import Portfolio from "../_includes/portfolio";
+import DefaultLayout from "@layouts/default"
+// Component Imports
+import Features from "../_includes/features";
 import Contact from "../_includes/contact";
 import Navbar from "../_includes/navbar";
 import Hamburger from "../_includes/hamburger";
@@ -7,27 +9,29 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div>
-      <main>
-        <Hamburger></Hamburger>
-        <Navbar></Navbar>
-        <div className="header">
-          <div className="header-image"></div>
-          <div className="header-content">
-            <div className="text-container">
-              <h1 className="header-title">Front End | Software Developer</h1>
-              <p>Proficient with javacript and working with React.js</p>
-            </div>
-            <div className="button-container">
-              <Link href="#portfolio">
-                <button className="header-button">LATEST PROJECTS!</button>
-              </Link>
+      <DefaultLayout>
+        <main>
+          <Hamburger></Hamburger>
+          <Navbar></Navbar>
+          <div className="header">
+            <div className="header-image"></div>
+            <div className="header-content">
+              <div className="text-container">
+                <h1 className="header-title">Front End | Software Developer</h1>
+                <p>Proficient with javacript and working with React.js</p>
+              </div>
+              <div className="button-container">
+                <Link href="#portfolio">
+                  <button className="header-button">LATEST PROJECTS!</button>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-        <Portfolio></Portfolio>
-        <Contact></Contact>
-      </main>
-      <footer></footer>
+          <Features></Features>
+          <Contact></Contact>
+        </main>
+      </DefaultLayout>
+
       <style jsx>{`
         .header {
           padding-top: 5rem;
@@ -65,6 +69,7 @@ export default function Home() {
         }
         .header-title {
           font-size: 4rem;
+          margin: 1rem 0rem;
         }
         .text-container > p {
           font-size: 1.8rem;
@@ -89,28 +94,6 @@ export default function Home() {
           border: solid 2px transparent;
           background: #fff;
           color: #1f1f1f !important;
-        }
-      `}</style>
-
-      <style jsx global>{`
-        @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
-        :root {
-          --primary-color: #4381c1;
-        }
-        html,
-        body {
-          scroll-behavior: smooth;
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-        * {
-          font-family: "Inconsolata", monospace;
-          box-sizing: border-box;
-          padding: 0;
-          margin: 0;
         }
       `}</style>
     </div>

@@ -1,9 +1,9 @@
-import PostLayout from "@layouts/project";
+import ProjecLayout from "@layouts/project";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { getPostBySlug, getAllPosts } from "@api";
 
-export default function Post(props) {
-  return <PostLayout title={props.title} content={props.content} />;
+export default function ProjectTemplate(props) {
+  return <ProjecLayout title={props.title} content={props.content} />;
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
