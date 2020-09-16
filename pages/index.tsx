@@ -20,7 +20,7 @@ export default function Home() {
                 <h1 className="header-title">Front End | Software Developer</h1>
                 <p>Proficient with javacript and working with React.js</p>
               </div>
-              <div className="button-container">
+              <div className="header-button-container">
                 <Link href="#portfolio">
                   <button className="header-button">LATEST PROJECTS!</button>
                 </Link>
@@ -74,7 +74,7 @@ export default function Home() {
         .text-container > p {
           font-size: 1.8rem;
         }
-        .button-container {
+        .header-button-container {
           margin: 2rem auto;
           display: flex;
           justify-content: center;

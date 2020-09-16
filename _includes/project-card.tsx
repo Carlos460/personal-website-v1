@@ -2,27 +2,31 @@ import Link from "next/link";
 
 export default function ProjectCard(props) {
   return (
-    <div>
-      <section className="project-card">
-        <div className="overlay">
-          <header className="card-content">
-            <h1>{props.title}</h1>
-
-          </header>
-          <nav>
-            <Link href={props.link}>            
-            <button className="project-button">View</button>
-            </Link>
-          </nav>
-        </div>
-      </section>
+    <section className="project-card">
+      <div className="overlay">
+        <header className="card-content">
+          <h1>{props.title}</h1>
+        </header>
+        <nav className="button-container">
+          <Link href={props.link}>
+            <button className="project-card-button">Learn More</button>
+          </Link>
+          <Link href={props.link}>
+            <button className="project-card-button">View code</button>
+          </Link>
+          <Link href={props.link}>
+            <button className="project-card-button">Visit</button>
+          </Link>
+        </nav>
+      </div>
       <style>{`
     .project-card{
       background-image: url(/img/tree.jpg);
       background-size: cover;
       color: white;
-      padding:0.5rem;
-      height: 30rem;
+      padding: 0.5rem;
+      height: 100%;
+      min-hieght: 10rem;
       width: 100%;
       transition: transform 0.2s ease;
       overflow: hidden;
@@ -39,15 +43,34 @@ export default function ProjectCard(props) {
       height: 100%;
       width: 100%;
       transition: background-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
     }
     .card-content{
-      padding: 0.5rem;
+      padding: 1.2rem;
     }
-    .project-button{ 
-      height: 3rem;
+    .button-container {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      display: flex;
+    }
+    .project-card-button{
+      height: 2rem;
       width: 5rem;
+      outline: none;
+      border: solid 2px #fff;
+      background: transparent;
+      color: #fff !important;
+      transition: all 0.2s ease;
+    }
+    .project-card-button:hover {
+      cursor: pointer;
+      border: solid 2px transparent;
+      background: #fff;
+      color: #1f1f1f !important;
     }
     `}</style>
-    </div>
+    </section>
   );
 }

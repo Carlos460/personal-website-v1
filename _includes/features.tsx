@@ -30,11 +30,13 @@ export default function Portfoliio() {
         }
         .feature-area {
           width: 100%;
+          height: 35rem;
           margin: 1rem 0rem;
         }
         .projects {
           display: grid;
           grid-template-columns: 1fr 1fr;
+          grid-template-rows: 35rem 35rem;
           gap: 1rem;
         }
         @media (max-width: 1400px) {

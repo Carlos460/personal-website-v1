@@ -2,30 +2,46 @@ import DefaultLayout from "@layouts/default";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import { getConfig, getAllPosts } from "@api";
+import ProjectCard from "@includes/project-card"
 
 export default function Blog(props) {
   return (
     <DefaultLayout title={props.title} description={props.description}>
-      <p>List of posts:</p>
-      <ul
-        style={{
-          height: "20rem",
-          width: "40rem",
-          display: "flex",
-          justifyContent: "center",
-          paddingTop: "5rem",
-        }}
-      >
-        {props.posts.map(function (project, idx) {
-          return (
-            <li key={idx}>
-              <Link href={"/projects/" + project.slug}>
-                <a>{project.title}</a>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <section className="project-container">
+        <p>List of posts:</p>
+        <div className="project-list">
+          {props.posts.map(function (project) {
+            return (
+              <div className="project-card-container">
+                <ProjectCard title={project.title} link={"/projects/" + project.slug}></ProjectCard>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <style jsx>{`
+      .project-container {
+        text-align: center;
+        width: 100%;
+        min-height: auto;
+        background-color: black;
+        color: white;
+        padding: 5rem 0rem;
+      }
+      .project-list {
+        width: 80%;
+        margin: 5rem auto;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .project-card-container {
+        margin: 1rem;
+        width: 25rem;
+        height: 30rem;
+      }
+        `}</style>
     </DefaultLayout>
   );
 }

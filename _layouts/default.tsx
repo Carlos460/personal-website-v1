@@ -19,6 +19,7 @@ export default function DefaultLayout(props) {
         }
         html,
         body {
+          background-color: balck;
           scroll-behavior: smooth;
           padding: 0;
           margin: 0;

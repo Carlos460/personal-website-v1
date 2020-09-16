@@ -14,7 +14,7 @@ export default function Navbar() {
     });
   });
 
-  useEffect(() => {});
+  useEffect(() => { });
   return (
     <div>
       <div className={`navbar ${navbarHidden}`}>
@@ -23,7 +23,7 @@ export default function Navbar() {
           <Link href="/projects">
             <a className="link">Porfolio</a>
           </Link>
-          <Link href="#contact">
+          <Link href="/#contact">
             <a className="link">Contact</a>
           </Link>
           <Link href="/resume">
