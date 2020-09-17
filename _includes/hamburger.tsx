@@ -30,13 +30,13 @@ export default function Hamburger() {
         <div className="bar3"></div>
       </div>
       <ul className={`hamburger-link-list ${hamState[1]}`}>
-        <Link href='#portfolio'>
+        <Link href='/projects'>
           <a className='hamburger-link'>Porfolio</a>
         </Link>
-        <Link href='#contact'>
+        <Link href='/#contact'>
           <a className='hamburger-link'>Contact</a>
         </Link>
-        <Link href='/resume'>
+        <Link href='/'>
           <a className='hamburger-link'>Resume</a>
         </Link>
       </ul>

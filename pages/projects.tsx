@@ -1,22 +1,22 @@
 import DefaultLayout from "@layouts/default";
-import Link from "next/link";
 import { GetStaticProps } from "next";
-import { getConfig, getAllPosts } from "@api";
+import { getConfig, getAllProjects } from "@api";
 import ProjectCard from "@includes/project-card"
 
-export default function Blog(props) {
+export default function ProjectsPage(props) {
   return (
     <DefaultLayout title={props.title} description={props.description}>
       <section className="project-container">
         <p>List of posts:</p>
         <div className="project-list">
-          {props.posts.map(function (project) {
+          {props.projects.map(function (project) {
             return (
               <div className="project-card-container">
-                <ProjectCard title={project.title} link={"/projects/" + project.slug}></ProjectCard>
+                <ProjectCard title={project.title} visit_link={"/"} viewcode_link={project.code_link} learnmore_link={"/projects/" + project.slug}></ProjectCard>
               </div>
             );
-          })}
+          })
+          }
         </div>
       </section>
 
@@ -56,10 +56,10 @@ the posts archive on the homepage.
 
 export const getStaticProps: GetStaticProps = async () => {
   const config = await getConfig();
-  const allPosts = await getAllPosts();
+  const allProjects = await getAllProjects();
   return {
     props: {
-      posts: allPosts,
+      projects: allProjects,
       title: config.title,
       description: config.description,
     },

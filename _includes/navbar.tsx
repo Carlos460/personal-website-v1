@@ -26,7 +26,7 @@ export default function Navbar() {
           <Link href="/#contact">
             <a className="link">Contact</a>
           </Link>
-          <Link href="/resume">
+          <Link href="/">
             <a className="link">Resume</a>
           </Link>
         </ul>

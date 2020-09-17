@@ -2,17 +2,12 @@ import DefaultLayout from "@layouts/default"
 // Component Imports
 import Features from "../_includes/features";
 import Contact from "../_includes/contact";
-import Navbar from "../_includes/navbar";
-import Hamburger from "../_includes/hamburger";
 import Link from "next/link";
-
 export default function Home() {
   return (
     <div>
       <DefaultLayout>
         <main>
-          <Hamburger></Hamburger>
-          <Navbar></Navbar>
           <div className="header">
             <div className="header-image"></div>
             <div className="header-content">

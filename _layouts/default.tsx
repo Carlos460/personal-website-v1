@@ -1,6 +1,7 @@
 import Head from "next/head";
-import Footer from "@includes/footer"
+import Footer from "@includes/footer";
 import Navbar from "@includes/navbar";
+import Hamburger from "@includes/hamburger";
 
 export default function DefaultLayout(props) {
   return (
@@ -10,6 +11,7 @@ export default function DefaultLayout(props) {
         <meta name="description" content={props.description} />
       </Head>
       <Navbar />
+      <Hamburger />
       {props.children}
       <Footer></Footer>
       <style jsx global>{`

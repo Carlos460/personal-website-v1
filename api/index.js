@@ -3,7 +3,7 @@ import marked from "marked";
 import yaml from "js-yaml";
 
 // Fetching all projects
-export async function getAllPosts() {
+export async function getAllProjects() {
   const context = require.context("../_projects", false, /\.md$/);
   const projects = [];
   for (const key of context.keys()) {
@@ -13,6 +13,7 @@ export async function getAllPosts() {
     projects.push({
       slug: project.replace(".md", ""),
       title: meta.data.title,
+      code_link: meta.data.code_link,
     });
   }
   return projects;
@@ -20,7 +21,7 @@ export async function getAllPosts() {
 
 // Fetching one project
 
-export async function getPostBySlug(slug) {
+export async function getProjectBySlug(slug) {
   const fileContent = await import(`../_projects/${slug}.md`);
   const meta = matter(fileContent.default);
   const content = marked(meta.content);

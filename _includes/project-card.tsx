@@ -8,13 +8,11 @@ export default function ProjectCard(props) {
           <h1>{props.title}</h1>
         </header>
         <nav className="button-container">
-          <Link href={props.link}>
+          <Link href={props.learnmore_link}>
             <button className="project-card-button">Learn More</button>
           </Link>
-          <Link href={props.link}>
-            <button className="project-card-button">View code</button>
-          </Link>
-          <Link href={props.link}>
+          <ViewCodeButton viewcode_link={props.viewcode_link}></ViewCodeButton>
+          <Link href={props.visit_link}>
             <button className="project-card-button">Visit</button>
           </Link>
         </nav>
@@ -73,4 +71,19 @@ export default function ProjectCard(props) {
     `}</style>
     </section>
   );
+}
+
+function ViewCodeButton(props) {
+  if (props.viewcode_link === "private") {
+    return (
+      <button className="project-card-button">Private</button>
+    );
+  } else {
+    return (
+      <a href={props.viewcode_link}>
+        <button className="project-card-button">View code</button>
+      </a>
+    );
+  }
+
 }

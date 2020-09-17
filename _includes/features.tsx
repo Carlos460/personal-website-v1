@@ -7,11 +7,11 @@ export default function Portfoliio() {
         <h1>Featuring my latest projects...</h1>
         <div className="project-holder">
           <div className="feature-area">
-            <ProjectCard title="Punity" link="/"></ProjectCard>
+            <ProjectCard title="Punity" visit_link={"/"} viewcode_link={"private"} learnmore_link={"/projects/punity"}></ProjectCard>
           </div>
           <div className="projects" >
-            <ProjectCard title="moon-base" link="/"></ProjectCard>
-            <ProjectCard title="Task-it" link="/"></ProjectCard>
+            <ProjectCard title="moon-base" visit_link={"/"} viewcode_link={"/"} learnmore_link={"/projects/"}></ProjectCard>
+            <ProjectCard title="Task-it" visit_link={"/"} viewcode_link={"https://github.com/Carlos460/Task-it"} learnmore_link={"/projects/task-it"}></ProjectCard>
           </div>
         </div>
       </div>
