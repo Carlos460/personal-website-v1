@@ -31,7 +31,7 @@ export default function Home() {
         .header {
           padding-top: 5rem;
           min-height: 100vh;
-          background-image: url(/img/background.jpg);
+          background-image: url(/img/background.webp);
           background-position: center;
           background-repeat: no-repeat;
           background-size: cover;
