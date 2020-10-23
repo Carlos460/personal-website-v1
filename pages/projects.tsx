@@ -1,6 +1,4 @@
 import DefaultLayout from "@layouts/default";
-import { GetStaticProps } from "next";
-import ProjectCard from "@includes/project-card"
 
 export default function ProjectsPage(props) {
   return (
@@ -8,17 +6,9 @@ export default function ProjectsPage(props) {
       <section className="project-container">
         <h1>List of posts:</h1>
         <div className="project-list">
-          {props.projects.map(function (project) {
-            return (
-              <div className="project-card-container">
-                <ProjectCard title={project.title} visit_link={"/"} viewcode_link={project.code_link} learnmore_link={"/projects/" + project.slug}></ProjectCard>
-              </div>
-            );
-          })
-          }
+          <h1>Hello World</h1>
         </div>
       </section>
-
       <style jsx>{`
       .project-container {
         text-align: center;
