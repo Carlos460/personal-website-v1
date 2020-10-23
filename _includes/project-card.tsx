@@ -3,20 +3,18 @@ import Link from "next/link";
 export default function ProjectCard(props) {
   return (
     <section className="project-card">
-      <div className="overlay">
-        <header className="card-content">
-          <h1>{props.title}</h1>
-        </header>
-        <nav className="button-container">
-          <Link href={props.learnmore_link}>
-            <button className="project-card-button">Learn More</button>
-          </Link>
-          <ViewCodeButton viewcode_link={props.viewcode_link}></ViewCodeButton>
-          <Link href={props.visit_link}>
-            <button className="project-card-button">Visit</button>
-          </Link>
-        </nav>
-      </div>
+      <header className="card-content">
+        <h1>{props.title}</h1>
+      </header>
+      <nav className="button-container">
+        <Link href={props.learnmore_link}>
+          <button className="project-card-button">Learn More</button>
+        </Link>
+        <ViewCodeButton viewcode_link={props.viewcode_link}></ViewCodeButton>
+        <Link href={props.visit_link}>
+          <button className="project-card-button">Visit</button>
+        </Link>
+      </nav>
       <style>{`
     .project-card{
       background-image: url(/img/tree.jpg);

@@ -1,13 +1,12 @@
 import DefaultLayout from "@layouts/default";
 import { GetStaticProps } from "next";
-import { getConfig, getAllProjects } from "@api";
 import ProjectCard from "@includes/project-card"
 
 export default function ProjectsPage(props) {
   return (
     <DefaultLayout title={props.title} description={props.description}>
       <section className="project-container">
-        <p>List of posts:</p>
+        <h1>List of posts:</h1>
         <div className="project-list">
           {props.projects.map(function (project) {
             return (
@@ -45,23 +44,3 @@ export default function ProjectsPage(props) {
     </DefaultLayout>
   );
 }
-
-/*
-getStaticProps is called at the build time to 
-pre-render pages by passing props to the default 
-component of the page. We use this function to fetch 
-the list of all posts at build time and render 
-the posts archive on the homepage.
-*/
-
-export const getStaticProps: GetStaticProps = async () => {
-  const config = await getConfig();
-  const allProjects = await getAllProjects();
-  return {
-    props: {
-      projects: allProjects,
-      title: config.title,
-      description: config.description,
-    },
-  };
-};
