@@ -2,7 +2,7 @@ import Link from 'next/link';
 // Component Imports
 import DefaultLayout from '@layouts/default'
 // Import Styles
-import {ProjectShowcase, Header, HeaderContent, TitleContainer, ButtonContainer,HeaderButton} from './styles/styles'
+import {ProjectShowcase, Header, HeaderContent, TitleContainer, ButtonContainer,HeaderButton} from '../public/styles/styles'
 
 export default function Home() {
   return (
