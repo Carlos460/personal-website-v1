@@ -1,11 +1,4 @@
 import styled from 'styled-components'
-
-export const ProjectShowcase = styled.section`
-  width: 100%;
-  height: 5rem;
-  padding: 5rem 0rem;
-  background-color: var(--black);
-`
 export const Header = styled.section`
   padding-top: 0rem;
   min-height: 100vh;
@@ -49,4 +42,21 @@ export const HeaderButton = styled.button`
     background: #fff;
     color: #1f1f1f !important;
   }
+`
+
+export const ProjectShowcase = styled.section`
+  width: 100%;
+  padding: 5rem 0rem;
+  background-color: white;
+`
+export const ProjectShowcaseTitle = styled.h1`
+  text-align: center;
+  color: black;
+  margin: 3rem 0rem;
+`
+export const ProjectContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 `
