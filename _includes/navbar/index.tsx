@@ -20,10 +20,10 @@ export default function Navbar() {
       <div className={`navbar ${navbarHidden}`}>
         <h1 className="brand-name">Carlos Flores</h1>
         <ul className="link-list">
-          <Link href="/projects">
+          <Link href="/#portfolio">
             <a className="link">Porfolio</a>
           </Link>
-          <Link href="/#contact">
+          <Link href="/">
             <a className="link">Contact</a>
           </Link>
           <Link href="/">

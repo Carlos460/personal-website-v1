@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Footer from "@includes/footer";
-import Navbar from "@includes/navbar";
-import Hamburger from "@includes/hamburger";
+import Navbar from "@includes/navbar/index";
+import Hamburger from "@includes/hamburger/index";
+import Footer from "@includes/footer/index";
 
 export default function DefaultLayout(props) {
   return (
@@ -11,29 +11,25 @@ export default function DefaultLayout(props) {
         <meta name="description" content={props.description} />
       </Head>
       <Navbar />
+
       <Hamburger />
       {props.children}
       <Footer></Footer>
       <style jsx global>{`
-        @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap");
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
         :root {
-          --primary-color: #4381c1;
-        }
-        html,
-        body {
-          background-color: balck;
-          scroll-behavior: smooth;
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
+          --black: #191919;
+          --yellow: #FFD72A;
+          --yellow-light: #ffe056;
+          --orange: #f77225;
+          --blue-dark: #072336;
         }
         * {
-          font-family: "Inconsolata", monospace;
+          scroll-behavior: smooth;
+          font-family: 'Montserrat', sans-serif;
           box-sizing: border-box;
-          padding: 0;
-          margin: 0;
+          padding: 0rem;
+          margin: 0rem;
         }
       `}</style>
     </main>
