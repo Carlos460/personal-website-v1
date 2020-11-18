@@ -3,18 +3,18 @@ import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [navbarHidden, setNavbarHidden] = useState("");
+  const [previouseScrollPosition, setPreviouseScrollPostion] = useState(0);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      const lastScrollPosition = window.scrollY;
-      const navbarState =
-        lastScrollPosition < 15
-          ? setNavbarHidden("")
-          : setNavbarHidden("hide-navbar");
-    });
-  });
+    window.onscroll = () => {
+      const currentScrollPosition = window.pageYOffset;
+      const navbarSettingState = currentScrollPosition < previouseScrollPosition
+        ? setNavbarHidden("show-navbar")
+        : setNavbarHidden("hide-navbar");
+      setPreviouseScrollPostion(currentScrollPosition);
+    };
+  }, [previouseScrollPosition]);
 
-  useEffect(() => { });
   return (
     <div>
       <div className={`navbar ${navbarHidden}`}>
@@ -37,12 +37,16 @@ export default function Navbar() {
           width: 100%;
           display: flex;
           position: fixed;
+          z-index: 10;
           top: 0rem;
-          transition: all 0.2s;
-          background-color: #transparent;
+          transition: top 0.2s;
+          background-color: black;
         }
         .hide-navbar {
           top: -5rem;
+        }
+        .show-navbar{
+          top: 0rem;
         }
         .brand-name {
           margin: 0.5rem 1rem;
