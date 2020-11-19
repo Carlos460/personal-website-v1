@@ -61,11 +61,14 @@ export const ButtonContainer = styled.div`
     }
 `
 
-export const Button = styled.button`
+export const Button = styled.a`
+    appearance: button;
+    text-decoration: none;
     background-color: var(--yellow);
+    text-align: center;
+    padding-top: 0.5rem;
     color: var(--black);
     margin: 0.5rem 0.5rem 0.5rem;
-    padding: 0.5rem;
     width: 8rem;
     height: 2.5rem;
     border: none;

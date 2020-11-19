@@ -8,7 +8,7 @@ export default function Navbar() {
   useEffect(() => {
     window.onscroll = () => {
       const currentScrollPosition = window.pageYOffset;
-      const navbarSettingState = currentScrollPosition < previouseScrollPosition
+      currentScrollPosition < previouseScrollPosition
         ? setNavbarHidden("show-navbar")
         : setNavbarHidden("hide-navbar");
       setPreviouseScrollPostion(currentScrollPosition);
@@ -23,7 +23,7 @@ export default function Navbar() {
           <Link href="/#portfolio">
             <a className="link">Porfolio</a>
           </Link>
-          <Link href="/">
+          <Link href="/#contact">
             <a className="link">Contact</a>
           </Link>
           <Link href="/">
@@ -35,12 +35,13 @@ export default function Navbar() {
       <style jsx>{`
         .navbar {
           width: 100%;
+          height: 4rem;
           display: flex;
           position: fixed;
           z-index: 10;
           top: 0rem;
           transition: top 0.2s;
-          background-color: black;
+          background-color: var(--blue-dark);
         }
         .hide-navbar {
           top: -5rem;
@@ -54,17 +55,16 @@ export default function Navbar() {
         }
         .link-list {
           list-style: none;
-          margin: 0rem 5rem 0rem auto;
+          margin: 0.5rem 5rem 0rem auto;
           display: flex;
           width: 30rem;
-          justify-content: space-between;
+          justify-content: space-around;
         }
 
         .link {
           height: 3rem;
           width: 8rem;
           align-text: center;
-          margin: 0.5rem 2rem;
           padding: 0.8rem 0rem;
           text-decoration: none;
           color: white;
@@ -73,6 +73,16 @@ export default function Navbar() {
         @media only screen and (max-width: 600px) {
           .link-list {
             margin: 0rem 0rem 0rem auto;
+          }
+        }
+        @media only screen and (max-width: 850px){
+          .brand-name{
+            display: none;
+          }
+          .link-list{
+            width: 100%;
+            margin: 0rem;
+            padding: 0.8rem 0rem;
           }
         }
       `}</style>
