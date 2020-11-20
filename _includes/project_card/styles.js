@@ -13,13 +13,12 @@ export const ProjectCardContainer = styled.section`
     }
 `
 export const ProjectCardImage = styled.div`
-    background-image: url('./img/background.webp');
+    background-image: url(${props => props.image});
     background-size: cover;
     height: 25rem;
     width: 35rem;
     @media (max-width: 720px){
-        height: 15rem;
-        width: 20rem;
+        display: none;
     }
 `
 // Content
@@ -90,9 +89,7 @@ export const TagContainer = styled.section`
     margin: 1rem 0rem;
     display: flex;
     flex-wrap: wrap;
-    @media (max-width: 720px) {
-        display: none;
-    }
+
 `
 
 export const TagComponent = styled.div`

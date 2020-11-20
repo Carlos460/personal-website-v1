@@ -5,9 +5,10 @@ import ProjectCard from '@includes/project_card/index'
 import Tag from '@includes/project_card/tag'
 // Import Styles
 import {
-  ProjectShowcase, Header, HeaderContent, TitleContainer,
-  ButtonContainer, HeaderButton, ProjectContainer, ProjectShowcaseTitle
+  ProjectShowcaseContainer, Header, HeaderContent, TitleContainer,
+  ButtonContainer, HeaderButton, ProjectContainer, ProjectShowcaseTitle, Portfolio
 } from '../public/styles/styles'
+import { useState } from 'react';
 
 
 const projectCardData = {
@@ -64,13 +65,15 @@ const projectCardData = {
 };
 
 export default function Home() {
+  const [highlightList] = useState([])
+
   return (
     <DefaultLayout title={`Carlos Flores`}>
       <Header>
         <HeaderContent>
           <TitleContainer>
-            <h1>Hello, my name is Carlos</h1>
-            <h2>I'm a Front-End Developer, proficient with JavaScript and working with other web-technologies!</h2>
+            <h1>Hello there!</h1>
+            <h2>{`I'm a JavaScript Developer, building modern and responsive Web Apps.`}</h2>
           </TitleContainer>
           <ButtonContainer>
             <Link href="#portfolio">
@@ -78,14 +81,18 @@ export default function Home() {
             </Link>
           </ButtonContainer>
         </HeaderContent>
+        <ProjectShowcaseContainer>
+
+        </ProjectShowcaseContainer>
       </Header>
-      <ProjectShowcase id='portfolio'>
+      <Portfolio id='portfolio'>
         <ProjectShowcaseTitle>
           <h1>Latest Projects</h1>
         </ProjectShowcaseTitle>
         <ProjectContainer>
           <ProjectCard
             title={projectCardData.punity.title}
+            imageUrl={`./img/punity.png`}
             description={projectCardData.punity.description}
             github={projectCardData.punity.github}
             link={projectCardData.punity.link}
@@ -99,6 +106,7 @@ export default function Home() {
           />
           <ProjectCard
             title={projectCardData.taskit.title}
+            imageUrl={`./img/taskit.png`}
             description={projectCardData.taskit.description}
             github={projectCardData.taskit.github}
             link={projectCardData.taskit.link}
@@ -126,6 +134,7 @@ export default function Home() {
           />
           <ProjectCard
             title={projectCardData.moonbase.title}
+            imageUrl={`./img/moonbase.png`}
             description={projectCardData.moonbase.description}
             github={projectCardData.moonbase.github}
             link={projectCardData.moonbase.link}
@@ -139,6 +148,7 @@ export default function Home() {
           />
           <ProjectCard
             title={projectCardData.tenniswebsite.title}
+            imageUrl={`./img/tennis.png`}
             description={projectCardData.tenniswebsite.description}
             github={projectCardData.tenniswebsite.github}
             link={projectCardData.tenniswebsite.link}
@@ -151,7 +161,7 @@ export default function Home() {
           />
 
         </ProjectContainer>
-      </ProjectShowcase>
+      </Portfolio>
     </DefaultLayout>
   );
 }

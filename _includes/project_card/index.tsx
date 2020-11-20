@@ -11,7 +11,7 @@ export default function ProjectCard(props) {
   const [hasUrlLink] = useState(props.link === null)
   return (
     <ProjectCardContainer>
-      <ProjectCardImage>
+      <ProjectCardImage image={props.imageUrl}>
       </ProjectCardImage>
       <ProjectCardContent>
         <ProjectCardTitle>{props.title}</ProjectCardTitle>

@@ -9,7 +9,7 @@ export default function Footer() {
       </footer>
       <style jsx>{`
       .footer-title{
-        background-color: black;
+        background-color: var(--dark-secondary);
         color: white;
         width: 100%;
         min-height: 10rem;

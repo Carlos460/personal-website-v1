@@ -19,6 +19,7 @@ export default function DefaultLayout(props) {
           --yellow-light: #ffe056;
           --orange: #f77225;
           --blue-dark: #072336;
+          --dark-secondary: #000B14;
         }
         * {
           scroll-behavior: smooth;
