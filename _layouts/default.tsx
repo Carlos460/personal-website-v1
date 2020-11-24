@@ -2,11 +2,12 @@ import Head from "next/head";
 import Navbar from "@includes/navbar/index";
 import Footer from "@includes/footer/index";
 
-export default function DefaultLayout(props) {
+export default function DefaultLayout(props: { title: string, children: object }) {
   return (
     <main>
       <Head>
         <title>{props.title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Navbar />
       {props.children}

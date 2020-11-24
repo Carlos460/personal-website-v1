@@ -27,7 +27,7 @@ export const TitleContainer = styled.div`
   text-align: left;
   color: white;
   & > h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 1rem 0rem;
   }
   @media (max-width: 1000px){
@@ -42,19 +42,24 @@ export const ButtonContainer = styled.div`
   }
 `
 export const HeaderButton = styled.button`
-  height: 4rem;
-  width: 12rem;
-  font-size: 1rem;
-  outline: none;
-  border: solid 2px #fff;
-  background: transparent;
-  color: #fff !important;
-  transition: all 0.2s ease;
+    background-color: var(--orange);
+    text-align: center;
+    color: white;
+    margin: 0.5rem 0rem;
+    width: 10rem;
+    height: 2.5rem;
+    border: none;
+    border-radius: 0.1rem;
+    outline: none;
+    font-weight: bold;
+    transition: box-shadow 0.2s ease;
   &:hover {
     cursor: pointer;
     border: solid 2px transparent;
-    background: #fff;
-    color: #1f1f1f !important;
+    box-shadow: 0px 0px 10px 0.1px var(--orange);
+  }
+  &:active{
+    box-shadow: none;
   }
 `
 export const ProjectShowcaseContainer = styled.div`
@@ -77,7 +82,7 @@ export const Portfolio = styled.section`
 `
 export const ProjectShowcaseTitle = styled.h1`
   text-align: center;
-  color: black;
+  color: white;
   margin: 3rem 0rem;
 `
 export const ProjectContainer = styled.div`

@@ -7,14 +7,14 @@ import Tag from '@includes/project_card/tag'
 import {
   ProjectShowcaseContainer, Header, HeaderContent, TitleContainer,
   ButtonContainer, HeaderButton, ProjectContainer, ProjectShowcaseTitle, Portfolio
-} from '../public/styles/styles'
-import { useState } from 'react';
-
+} from './styles'
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion'
 
 const projectCardData = {
   punity: {
     title: `P'Unity`,
-    github: null,
+    github: ``,
     link: `https://punity.de/`,
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, minima aperiam. 
     Sed quos obcaecati perferendis, exercitationem inventore labore error, veniam rerum explicabo esse quaerat ipsam veritatis, 
@@ -25,7 +25,7 @@ const projectCardData = {
   taskit: {
     title: `Task-It`,
     github: `https://github.com/Carlos460/Task-it`,
-    link: null,
+    link: ``,
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, minima aperiam. 
     Sed quos obcaecati perferendis, exercitationem inventore labore error, veniam rerum explicabo esse quaerat ipsam veritatis, 
     sapiente qui at quibusdam dignissimos minima amet reiciendis adipisci nobis magnam debitis ipsa 
@@ -45,7 +45,7 @@ const projectCardData = {
   moonbase: {
     title: `Moon Base`,
     github: `https://github.com/esteban0829/nodejs_class_apply_webpage`,
-    link: null,
+    link: ``,
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, minima aperiam. 
     Sed quos obcaecati perferendis, exercitationem inventore labore error, veniam rerum explicabo esse quaerat ipsam veritatis, 
     sapiente qui at quibusdam dignissimos minima amet reiciendis adipisci nobis magnam debitis ipsa 
@@ -54,8 +54,8 @@ const projectCardData = {
   },
   tenniswebsite: {
     title: `Tennis Academy`,
-    github: null,
-    link: null,
+    github: ``,
+    link: ``,
     description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, minima aperiam. 
     Sed quos obcaecati perferendis, exercitationem inventore labore error, veniam rerum explicabo esse quaerat ipsam veritatis, 
     sapiente qui at quibusdam dignissimos minima amet reiciendis adipisci nobis magnam debitis ipsa 
@@ -65,19 +65,30 @@ const projectCardData = {
 };
 
 export default function Home() {
-  const [highlightList] = useState([])
+  const [pos, setPos] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPos(100);
+      console.log(pos)
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <DefaultLayout title={`Carlos Flores`}>
       <Header>
         <HeaderContent>
-          <TitleContainer>
-            <h1>Hello there!</h1>
-            <h2>{`I'm a JavaScript Developer, building modern and responsive Web Apps.`}</h2>
-          </TitleContainer>
+          <motion.div initial={false} animate={{ x: pos }}>
+            <TitleContainer>
+              <h1>Hello there!</h1>
+              <h2>I'm a JavaScript Developer,</h2>
+              <h3>{`building modern and responsive Web Apps.`}</h3>
+            </TitleContainer>
+          </motion.div>
           <ButtonContainer>
-            <Link href="#portfolio">
-              <HeaderButton>LATEST PROJECTS!</HeaderButton>
+            <Link href="">
+              <HeaderButton onClick={() => setPos(pos + 10)}>LATEST PROJECTS!</HeaderButton>
             </Link>
           </ButtonContainer>
         </HeaderContent>

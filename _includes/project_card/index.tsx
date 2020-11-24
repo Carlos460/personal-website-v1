@@ -6,9 +6,18 @@ import {
   TagContainer, DesccriptionContainer, ProjectCardImage, ProjectCardContent
 } from './styles'
 
-export default function ProjectCard(props) {
-  const [hasGithubLink] = useState(props.github === null);
-  const [hasUrlLink] = useState(props.link === null)
+interface ProjectCardProps {
+  github: string;
+  link: string;
+  imageUrl?: string;
+  title: string;
+  description: string;
+  tags?: object;
+}
+
+export default function ProjectCard(props: ProjectCardProps) {
+  const [hasGithubLink] = useState(props.github === '');
+  const [hasUrlLink] = useState(props.link === '')
   return (
     <ProjectCardContainer>
       <ProjectCardImage image={props.imageUrl}>

@@ -29,7 +29,7 @@ export const ProjectCardContent = styled.div`
     height: 25rem;
     background-color: var(--blue-dark);
     @media (max-width: 720px){
-        height: 25rem;
+        min-height: 30rem;
         width: 20rem;
         padding: 1rem;
     }
@@ -71,16 +71,15 @@ export const Button = styled.a`
     width: 8rem;
     height: 2.5rem;
     border: none;
-    border-radius: 1rem;
+    border-radius: 0.1rem;
     outline: none;
     font-weight: bold;
     transition: border 0.2s ease;
     &:hover {
         cursor: pointer;
-        border: solid white 1px;
     }
     &:Active {
-        margin: 0.5rem 0.5rem 0.4rem;
+        margin: 0.5rem 0.5rem 0.3rem;
     }
 `
 // Tag Component
@@ -97,7 +96,7 @@ export const TagComponent = styled.div`
     min-width: 5rem;
     text-align: center;
     padding: 0.4rem 0.5rem;
-    border-radius: 0.5rem;
+    border-radius: 0.2rem;
     margin-right: 0.5rem;
     margin-top:0.5rem;
     background-color: var(--orange);
