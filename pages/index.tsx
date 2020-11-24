@@ -65,21 +65,12 @@ const projectCardData = {
 };
 
 export default function Home() {
-  const [pos, setPos] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPos(100);
-      console.log(pos)
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <DefaultLayout title={`Carlos Flores`}>
       <Header>
         <HeaderContent>
-          <motion.div initial={false} animate={{ x: pos }}>
+          <motion.div >
             <TitleContainer>
               <h1>Hello there!</h1>
               <h2>I'm a JavaScript Developer,</h2>
@@ -87,8 +78,13 @@ export default function Home() {
             </TitleContainer>
           </motion.div>
           <ButtonContainer>
-            <Link href="">
-              <HeaderButton onClick={() => setPos(pos + 10)}>LATEST PROJECTS!</HeaderButton>
+            <Link href="#portfolio">
+              <motion.div
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.8 }}
+              >
+              <HeaderButton><h2>Portfolio</h2></HeaderButton>
+              </motion.div>
             </Link>
           </ButtonContainer>
         </HeaderContent>
