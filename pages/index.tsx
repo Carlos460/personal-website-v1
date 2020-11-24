@@ -7,8 +7,7 @@ import Tag from '@includes/project_card/tag'
 import {
   ProjectShowcaseContainer, Header, HeaderContent, TitleContainer,
   ButtonContainer, HeaderButton, ProjectContainer, ProjectShowcaseTitle, Portfolio
-} from './styles'
-import { useEffect, useState } from 'react';
+} from '../public/css/styles'
 import { motion } from 'framer-motion'
 
 const projectCardData = {
@@ -76,17 +75,17 @@ export default function Home() {
               <h2>I'm a JavaScript Developer,</h2>
               <h3>{`building modern and responsive Web Apps.`}</h3>
             </TitleContainer>
-          </motion.div>
           <ButtonContainer>
             <Link href="#portfolio">
               <motion.div
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.8 }}
-              >
+                >
               <HeaderButton><h2>Portfolio</h2></HeaderButton>
               </motion.div>
             </Link>
           </ButtonContainer>
+                </motion.div>
         </HeaderContent>
         <ProjectShowcaseContainer>
 

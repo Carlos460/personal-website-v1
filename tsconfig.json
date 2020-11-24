@@ -33,7 +33,6 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
-    "pages/styles.js"
+    "**/*.tsx"
   ]
 }
