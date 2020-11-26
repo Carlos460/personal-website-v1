@@ -14,6 +14,7 @@ export default function DefaultLayout(props: { title: string, children: object }
       <Footer></Footer>
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
         :root {
           --black: #191919;
           --yellow: #FFD72A;

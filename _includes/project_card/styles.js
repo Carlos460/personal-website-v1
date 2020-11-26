@@ -59,26 +59,22 @@ export const ButtonContainer = styled.div`
 `
 
 export const Button = styled.a`
+    border: ${props => props.theme.border};
+    background-color: ${props => props.theme.bgColor};
+    color: ${props => props.theme.textColor};
     appearance: button;
     display: block;
     text-decoration: none;
-    background-color: var(--yellow);
     text-align: center;
-    padding-top: 0.5rem;
-    color: var(--black);
+    padding: 0.52rem 0rem;
     margin: 0.5rem 0.5rem 0.5rem;
     width: 8rem;
     height: 2.5rem;
-    border: none;
     border-radius: 0.1rem;
     outline: none;
     font-weight: bold;
-    transition: border 0.2s ease;
     &:hover {
         cursor: pointer;
-    }
-    &:Active {
-        margin: 0.5rem 0.5rem 0.3rem;
     }
 `
 // Tag Component

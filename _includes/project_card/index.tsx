@@ -15,6 +15,20 @@ interface ProjectCardProps {
   tags?: object;
 }
 
+Button.defaultProps = {
+  theme: {
+    textColor: `black`,
+    border: `none`,
+    bgColor: `var(--yellow)`
+  }
+}
+
+const disabledButton = {
+  textColor: `white`,
+  border: `solid var(--yellow) 2px`,
+  bgColor: `transparent`
+}
+
 export default function ProjectCard(props: ProjectCardProps) {
   const [hasGithubLink] = useState(props.github === '');
   const [hasUrlLink] = useState(props.link === '')
@@ -36,7 +50,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             whileTap={{ y: 2 }}
           >
             {hasUrlLink
-              ? <Button>Offline</Button>
+              ? <Button theme={disabledButton}>Offline</Button>
               : <Button href={props.link} target={`_blank`}>Visit Webstite</Button>
             }
           </motion.div>
@@ -45,7 +59,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             whileTap={{ y: 2 }}
           >
             {hasGithubLink
-              ? <Button>Private</Button>
+              ? <Button theme={disabledButton}>Private</Button>
               : <Button href={props.github} target={`_blank`}>View Github</Button>
             }
           </motion.div>

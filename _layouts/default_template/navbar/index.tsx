@@ -2,22 +2,27 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  const [navbarHidden, setNavbarHidden] = useState("");
+  const [navbarHidden, setNavbarHidden] = useState('');
+  const [navbarTransparent, setNavbarTransparent] = useState('');
   const [previouseScrollPosition, setPreviouseScrollPostion] = useState(0);
 
   useEffect(() => {
     window.onscroll = () => {
       const currentScrollPosition = window.pageYOffset;
       currentScrollPosition < previouseScrollPosition
-        ? setNavbarHidden("show-navbar")
-        : setNavbarHidden("hide-navbar");
+        ? setNavbarHidden('show-navbar')
+        : setNavbarHidden('hide-navbar');
       setPreviouseScrollPostion(currentScrollPosition);
+
+      currentScrollPosition < 40
+        ? setNavbarTransparent('transparent')
+        : setNavbarTransparent('');
     };
   }, [previouseScrollPosition]);
 
   return (
     <div>
-      <div className={`navbar ${navbarHidden}`}>
+      <div className={`navbar ${navbarHidden} ${navbarTransparent}`}>
         <h1 className="brand-name">
           <Link href="/">
             <a className="link">Carlos Flores</a>
@@ -25,13 +30,13 @@ export default function Navbar() {
         </h1>
         <ul className="link-list">
           <Link href="/#portfolio">
-            <a className="link">Porfolio</a>
+            <a className="link"><b>Porfolio</b></a>
           </Link>
           <Link href="/#contact">
-            <a className="link">Contact</a>
+            <a className="link"><b>Contact</b></a>
           </Link>
           <Link href="/">
-            <a className="link">Resume</a>
+            <a className="link"><b>Resume</b></a>
           </Link>
         </ul>
       </div>
@@ -46,14 +51,17 @@ export default function Navbar() {
           position: fixed;
           z-index: 10;
           top: 0rem;
-          transition: top 0.2s;
-          background-color: var(--blue-dark);
+          transition: top 0.2s, background-color 0.2s;
+          background-color: rgba(0,0,0,0.9);
         }
         .hide-navbar {
           top: -5rem;
         }
         .show-navbar{
           top: 0rem;
+        }
+        .transparent {
+          background-color: rgba(0,0,0,0);
         }
         .brand-name {
           margin: auto 0rem;
