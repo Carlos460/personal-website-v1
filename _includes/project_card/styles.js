@@ -4,12 +4,11 @@ export const ProjectCardContainer = styled.section`
     position: relative;
     display: flex;
     flex-direction: row;
-    margin: 3rem;
+    margin: 3rem auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     @media (max-width: 1200px){
         flex-direction: column;
         justify-content: center;
-        margin: 1rem;
     }
 `
 export const ProjectCardImage = styled.div`
@@ -18,7 +17,7 @@ export const ProjectCardImage = styled.div`
     height: 25rem;
     width: 35rem;
     @media (max-width: 720px){
-        display: none;
+        width: 100%;
     }
 `
 // Content
@@ -30,8 +29,7 @@ export const ProjectCardContent = styled.div`
     background-color: var(--blue-dark);
     @media (max-width: 720px){
         min-height: 30rem;
-        width: 20rem;
-        padding: 1rem;
+        width: 100%;
     }
 `
 export const ProjectCardTitle = styled.h1`
@@ -62,6 +60,7 @@ export const ButtonContainer = styled.div`
 
 export const Button = styled.a`
     appearance: button;
+    display: block;
     text-decoration: none;
     background-color: var(--yellow);
     text-align: center;

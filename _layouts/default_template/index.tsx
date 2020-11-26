@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Navbar from "@includes/navbar/index";
-import Footer from "@includes/footer/index";
+import Navbar from "./navbar/index";
+import Footer from "./footer/index";
 
 export default function DefaultLayout(props: { title: string, children: object }) {
   return (

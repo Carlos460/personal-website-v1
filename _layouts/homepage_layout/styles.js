@@ -1,25 +1,28 @@
 import styled from 'styled-components'
 export const Header = styled.section`
-  padding-top: 0rem;
+  padding: 0rem 15% 0rem;
   min-height: 100vh;
   background-color: var(--dark-secondary);
-  /* background-image: url(/img/water.jpg);
+  background-image: url(/img/fall.jpg);
+  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; */
+  background-size: cover; 
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   @media (max-width: 1000px){
+    justify-content: flex-start;
     flex-direction: column;
   }
 `
 export const HeaderContent = styled.div`
   width: 40%;
   height: 30rem;
-  margin: auto;
-  padding: 1rem;
+  margin: auto 0rem;
   @media (max-width: 1000px){
     width: 100%;
+    margin: auto;
   }
 `
 export const TitleContainer = styled.div`
@@ -56,38 +59,9 @@ export const HeaderButton = styled.button`
   &:hover {
     cursor: pointer;
     border: solid 2px transparent;
-    box-shadow: 0px 0px 10px 0.1px var(--orange);
+    /* box-shadow: 0px 0px 10px 0.1px var(--orange); */
   }
   &:active{
     box-shadow: none;
   }
-`
-export const ProjectShowcaseContainer = styled.div`
-  background-image: url(/img/water.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;  
-  height: 35rem;
-  width: 25rem;
-  margin: auto;
-  @media (max-width: 1000px){
-    display: none;
-  }
-`
-
-export const Portfolio = styled.section`
-  width: 100%;
-  padding: 5rem 0rem;
-  background-color: var(--dark-secondary);
-`
-export const ProjectShowcaseTitle = styled.h1`
-  text-align: center;
-  color: white;
-  margin: 3rem 0rem;
-`
-export const ProjectContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 `

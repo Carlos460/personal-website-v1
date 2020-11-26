@@ -18,7 +18,11 @@ export default function Navbar() {
   return (
     <div>
       <div className={`navbar ${navbarHidden}`}>
-        <h1 className="brand-name">Carlos Flores</h1>
+        <h1 className="brand-name">
+          <Link href="/">
+            <a className="link">Carlos Flores</a>
+          </Link>
+        </h1>
         <ul className="link-list">
           <Link href="/#portfolio">
             <a className="link">Porfolio</a>
@@ -36,7 +40,9 @@ export default function Navbar() {
         .navbar {
           width: 100%;
           height: 4rem;
+          padding: 0rem 15%;
           display: flex;
+          justify-content: space-between;
           position: fixed;
           z-index: 10;
           top: 0rem;
@@ -50,15 +56,15 @@ export default function Navbar() {
           top: 0rem;
         }
         .brand-name {
-          margin: 0.5rem 1rem;
+          margin: auto 0rem;
           color: white;
         }
         .link-list {
           list-style: none;
-          margin: 0.5rem 5rem 0rem auto;
+          margin: auto 0rem;;
           display: flex;
           width: 30rem;
-          justify-content: space-around;
+          justify-content: space-between;
         }
 
         .link {

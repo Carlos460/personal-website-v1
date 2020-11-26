@@ -1,4 +1,4 @@
-
+import { motion } from 'framer-motion'
 // Import Styles
 import { useState } from 'react';
 import {
@@ -31,14 +31,24 @@ export default function ProjectCard(props: ProjectCardProps) {
           {props.description}
         </DesccriptionContainer>
         <ButtonContainer>
-          {hasUrlLink
-            ? <Button>Offline</Button>
-            : <Button href={props.link}>Visit Webstite</Button>
-          }
-          {hasGithubLink
-            ? <Button>Private</Button>
-            : <Button href={props.github}>View Github</Button>
-          }
+          <motion.div
+            whileHover={{ y: -3 }}
+            whileTap={{ y: 2 }}
+          >
+            {hasUrlLink
+              ? <Button>Offline</Button>
+              : <Button href={props.link} target={`_blank`}>Visit Webstite</Button>
+            }
+          </motion.div>
+          <motion.div
+            whileHover={{ y: -3 }}
+            whileTap={{ y: 2 }}
+          >
+            {hasGithubLink
+              ? <Button>Private</Button>
+              : <Button href={props.github} target={`_blank`}>View Github</Button>
+            }
+          </motion.div>
         </ButtonContainer>
       </ProjectCardContent>
     </ProjectCardContainer>
