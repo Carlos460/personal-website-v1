@@ -4,10 +4,11 @@ import Footer from "./footer/index";
 
 export default function DefaultLayout(props: { title: string, children: object }) {
   return (
-    <main>
+    <>
       <Head>
         <title>{props.title}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="Carlos Flores" content="My portfolio website featuring my latest projects." />
       </Head>
       <Navbar />
       {props.children}
@@ -31,6 +32,6 @@ export default function DefaultLayout(props: { title: string, children: object }
           margin: 0rem;
         }
       `}</style>
-    </main>
+    </>
   );
 }
