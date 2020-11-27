@@ -65,7 +65,7 @@ function PortfolioSection() {
         <ProjectContainer>
           <ProjectCard
             title={projectCardData.punity.title}
-            imageUrl={`./img/punity.png`}
+            imageUrl={`/img/punity.png`}
             description={projectCardData.punity.description}
             github={projectCardData.punity.github}
             link={projectCardData.punity.link}
@@ -79,7 +79,7 @@ function PortfolioSection() {
           />
           <ProjectCard
             title={projectCardData.personalwebsite.title}
-            imageUrl={`./img/portfolio.png`}
+            imageUrl={`/img/portfolio.png`}
             description={projectCardData.personalwebsite.description}
             github={projectCardData.personalwebsite.github}
             link={projectCardData.personalwebsite.link}
@@ -93,7 +93,7 @@ function PortfolioSection() {
           />
           <ProjectCard
             title={projectCardData.taskit.title}
-            imageUrl={`./img/taskit.png`}
+            imageUrl={`/img/taskit.png`}
             description={projectCardData.taskit.description}
             github={projectCardData.taskit.github}
             link={projectCardData.taskit.link}
@@ -108,7 +108,7 @@ function PortfolioSection() {
           />
           <ProjectCard
             title={projectCardData.moonbase.title}
-            imageUrl={`./img/moonbase.png`}
+            imageUrl={`/img/moonbase.png`}
             description={projectCardData.moonbase.description}
             github={projectCardData.moonbase.github}
             link={projectCardData.moonbase.link}
@@ -122,7 +122,7 @@ function PortfolioSection() {
           />
           <ProjectCard
             title={projectCardData.tenniswebsite.title}
-            imageUrl={`./img/tennis.png`}
+            imageUrl={`/img/tennis.png`}
             description={projectCardData.tenniswebsite.description}
             github={projectCardData.tenniswebsite.github}
             link={projectCardData.tenniswebsite.link}
