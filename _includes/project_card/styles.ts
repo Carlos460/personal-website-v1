@@ -1,8 +1,5 @@
 import styled from 'styled-components'
 
-interface ImageUrlProps {
-    image: string;
-}
 
 export const ProjectCardContainer = styled.section`
     position: relative;
@@ -15,8 +12,8 @@ export const ProjectCardContainer = styled.section`
         justify-content: center;
     }
 `
-export const ProjectCardImage = styled.div<ImageUrlProps>`
-    background-image: url(${props => props.image});
+export const ProjectCardImage = styled.div<{ customImage: string }>`
+    background-image: url(${props => props.customImage});
     background-size: cover;
     height: 25rem;
     width: 35rem;

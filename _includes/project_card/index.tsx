@@ -9,7 +9,7 @@ import {
 interface ProjectCardProps {
   github: string;
   link: string;
-  imageUrl?: string;
+  imageUrl: string;
   title: string;
   description: string;
   tags?: object;
@@ -34,7 +34,7 @@ export default function ProjectCard(props: ProjectCardProps) {
   const [hasUrlLink] = useState(props.link === '')
   return (
     <ProjectCardContainer>
-      <ProjectCardImage image={props.imageUrl}>
+      <ProjectCardImage customImage={props.imageUrl}>
       </ProjectCardImage>
       <ProjectCardContent>
         <ProjectCardTitle>{props.title}</ProjectCardTitle>
