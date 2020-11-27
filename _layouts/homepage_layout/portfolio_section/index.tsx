@@ -10,50 +10,47 @@ const projectCardData = {
     title: `P'Unity`,
     github: ``,
     link: `https://punity.de/`,
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, minima aperiam. 
-    Sed quos obcaecati perferendis, exercitationem inventore labore error, veniam rerum explicabo esse quaerat ipsam veritatis, 
-    sapiente qui at quibusdam dignissimos minima amet reiciendis adipisci nobis magnam debitis ipsa 
-    incidunt! Nisi obcaecati asperiores veniam consectetur earum atque illum fugiat odio.
+    description: `P'Unity is a unique Online Community revolving around Computer Science. 
+    Developed for performance, live comments, intelligent code engines, and more. With a 
+    small team of four, we are working together to bring a fully polished web application. 
+    I've made use of the styled-components library to implement the modern design for P'Unity.
     `,
   },
   taskit: {
     title: `Task-It`,
     github: `https://github.com/Carlos460/Task-it`,
     link: ``,
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, minima aperiam. 
-    Sed quos obcaecati perferendis, exercitationem inventore labore error, veniam rerum explicabo esse quaerat ipsam veritatis, 
-    sapiente qui at quibusdam dignissimos minima amet reiciendis adipisci nobis magnam debitis ipsa 
-    incidunt! Nisi obcaecati asperiores veniam consectetur earum atque illum fugiat odio.
+    description: `To-Do App is a full-stack application made to store user data.
+    Made with full CRUD functionality and user input validation.
     `,
   },
   personalwebsite: {
     title: `Web Portfolio`,
     github: `https://github.com/Carlos460/personal-website`,
     link: `https://carlosflores.vercel.app/`,
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, minima aperiam. 
-    Sed quos obcaecati perferendis, exercitationem inventore labore error, veniam rerum explicabo esse quaerat ipsam veritatis, 
-    sapiente qui at quibusdam dignissimos minima amet reiciendis adipisci nobis magnam debitis ipsa 
-    incidunt! Nisi obcaecati asperiores veniam consectetur earum atque illum fugiat odio.
+    description: `This Project is my first web portfolio showcasing my latest work! 
+    I used this opportunity to learn some Typescript fundamentals and implement them 
+    while developing this web app. Utilizing Next.js, a React.js framework, I was able 
+    to learn the ins and outs to create a Responsive Front-End. I also made use of the Framer 
+    Motion to add subtle animations to my buttons. Developing this took me out of my comfort 
+    zone by making me use tools that I'm not comfortable with and learn along the way.
     `,
   },
   moonbase: {
     title: `Moon Base`,
     github: `https://github.com/esteban0829/nodejs_class_apply_webpage`,
     link: ``,
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, minima aperiam. 
-    Sed quos obcaecati perferendis, exercitationem inventore labore error, veniam rerum explicabo esse quaerat ipsam veritatis, 
-    sapiente qui at quibusdam dignissimos minima amet reiciendis adipisci nobis magnam debitis ipsa 
-    incidunt! Nisi obcaecati asperiores veniam consectetur earum atque illum fugiat odio.
+    description: `Moonbase was a small duo team project built to help people 
+    collaborate with like-minded people. I developed the front end using vanilla javascript, 
+    HTML, and CSS. Coordinated with my team member to bring together a functional full-stack 
+    application. Using the Fetch API I was able to deliver data to our rest API and store it in an SQL database.  
     `,
   },
   tenniswebsite: {
     title: `Tennis Academy`,
     github: ``,
     link: ``,
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, minima aperiam. 
-    Sed quos obcaecati perferendis, exercitationem inventore labore error, veniam rerum explicabo esse quaerat ipsam veritatis, 
-    sapiente qui at quibusdam dignissimos minima amet reiciendis adipisci nobis magnam debitis ipsa 
-    incidunt! Nisi obcaecati asperiores veniam consectetur earum atque illum fugiat odio.
+    description: `My first application using HTML and CSS together to make a static website.
     `,
   },
 };
@@ -63,7 +60,7 @@ function PortfolioSection() {
     <>
       <Portfolio id='portfolio'>
         <ProjectShowcaseTitle>
-          <h1>Latest Projects</h1>
+          <h1>Projects that have helped me grow as a Developer</h1>
         </ProjectShowcaseTitle>
         <ProjectContainer>
           <ProjectCard
