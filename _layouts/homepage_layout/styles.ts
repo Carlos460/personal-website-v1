@@ -56,7 +56,13 @@ export const LogoLinkContainer = styled.div`
   width: 100%;
   display: flex;
 `
-export const LogoLink = styled.a`
+
+interface LogoLinkProps {
+  logo: string;
+  yShift: string;
+}
+
+export const LogoLink = styled.a<LogoLinkProps>`
   height: 2rem;
   width: 2rem;
   margin: 0rem 3rem 0rem 0rem;

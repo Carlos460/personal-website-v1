@@ -12,7 +12,7 @@ export const ProjectCardContainer = styled.section`
         justify-content: center;
     }
 `
-export const ProjectCardImage = styled.div<{ customImage: string }>`
+export const ProjectCardImage = styled.div<{ customImage?: string }>`
     background-image: url(${props => props.customImage});
     background-size: cover;
     height: 25rem;
@@ -59,7 +59,15 @@ export const ButtonContainer = styled.div`
     }
 `
 
-export const Button = styled.a`
+interface ButtonProps {
+    theme: {
+        border: string;
+        bgColor: string;
+        textColor: string;
+    }
+}
+
+export const Button = styled.a<ButtonProps>`
     border: ${props => props.theme.border};
     background-color: ${props => props.theme.bgColor};
     color: ${props => props.theme.textColor};
