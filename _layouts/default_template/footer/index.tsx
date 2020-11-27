@@ -16,7 +16,7 @@ export default function Footer() {
           </div>
           <div className='links-container'>
             <FooterLink href='https://github.com/Carlos460' target='_blank'><b>Github</b></FooterLink>
-            <FooterLink href='https://www.linkedin.com/in/carlos-flores-1795981b6/' target='_blank'><b>Linkin</b></FooterLink>
+            <FooterLink href='https://www.linkedin.com/in/carlos-flores-1795981b6/' target='_blank'><b>Linkedin</b></FooterLink>
           </div>
         </section>
       </footer>
