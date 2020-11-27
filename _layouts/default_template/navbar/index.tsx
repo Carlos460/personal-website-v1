@@ -33,7 +33,7 @@ export default function Navbar() {
             <a className="link"><b>Porfolio</b></a>
           </Link>
           <a className="link" href='mailto:carlosfloresalex@gmail.com?subject=Greetings from:' target='_blank'><b>Contact</b></a>
-          <Link href='https://drive.google.com/file/d/1aMVJ85DCymY0pYEwx_qPzaJYq-rP51Ux/view?usp=sharing' passHref>
+          <Link href='https://drive.google.com/file/d/1WoYpNKDvkWbdiN2oTzjRY3j3lJloqzCT/view?usp=sharing' passHref>
             <a className="link" target='_blank'><b>Resume</b></a>
           </Link>
         </ul>
