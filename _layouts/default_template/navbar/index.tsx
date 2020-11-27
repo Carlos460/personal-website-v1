@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [navbarHidden, setNavbarHidden] = useState('');
-  const [navbarTransparent, setNavbarTransparent] = useState('');
+  const [navbarTransparent, setNavbarTransparent] = useState('transparent');
   const [previouseScrollPosition, setPreviouseScrollPostion] = useState(0);
 
   useEffect(() => {
@@ -29,14 +29,12 @@ export default function Navbar() {
           </Link>
         </h1>
         <ul className="link-list">
-          <Link href="/#portfolio">
+          <Link href="/#portfolio" passHref>
             <a className="link"><b>Porfolio</b></a>
           </Link>
-          <Link href="/#contact">
-            <a className="link"><b>Contact</b></a>
-          </Link>
-          <Link href="/">
-            <a className="link"><b>Resume</b></a>
+          <a className="link" href='mailto:carlosfloresalex@gmail.com?subject=Greetings from:' target='_blank'><b>Contact</b></a>
+          <Link href='https://drive.google.com/file/d/1aMVJ85DCymY0pYEwx_qPzaJYq-rP51Ux/view?usp=sharing' passHref>
+            <a className="link" target='_blank'><b>Resume</b></a>
           </Link>
         </ul>
       </div>
