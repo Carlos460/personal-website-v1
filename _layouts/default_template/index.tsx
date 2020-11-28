@@ -9,6 +9,7 @@ export default function DefaultLayout(props: { title: string, children: object }
         <title>{props.title}</title>
         <meta name="description" content="My portfolio website featuring my latest projects." />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:image" content="/img/portfolio.png"></meta>
       </Head>
       <Navbar />
       {props.children}
