@@ -3,7 +3,7 @@ export const Header = styled.section`
   padding: 0rem 15% 0rem;
   min-height: 100vh;
   background-color: var(--dark-secondary);
-  background-image: url(/img/fall.jpg);
+  background-image: url(/fall.jpg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;

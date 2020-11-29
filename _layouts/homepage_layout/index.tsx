@@ -1,7 +1,6 @@
 import Link from 'next/link';
 // Import Layout Components
 import DefaultLayout from '@layouts/default_template'
-import PortfolioSection from '@layouts/homepage_layout/portfolio_section'
 // Import Styles
 import {
   Header, HeaderOverlay, HeaderContent, TitleContainer,
@@ -10,7 +9,7 @@ import {
 // Import Libries
 import { motion } from 'framer-motion'
 
-function HomepageLayout() {
+function HomepageLayout(porps: any) {
   return (
     <div>
       <DefaultLayout title={`Carlos Flores`}>
@@ -56,7 +55,7 @@ function HomepageLayout() {
             </motion.div>
           </HeaderContent>
         </Header>
-        <PortfolioSection />
+        {porps.children}
       </DefaultLayout>
     </div>
   );
