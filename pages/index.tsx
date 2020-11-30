@@ -1,12 +1,8 @@
 import HomepageLayout from '@layouts/homepage_layout/index.tsx'
 import { GetStaticProps } from 'next';
 import PortfolioSection from '@layouts/homepage_layout/portfolio_section'
-import { useEffect } from 'react';
 
 export default function Home(props: { projects: Array<object>, imageListRaw: any }) {
-  useEffect(() => {
-    console.log(props.imageListRaw);
-  });
   return (
     <HomepageLayout>
       <PortfolioSection projectList={props.projects} />

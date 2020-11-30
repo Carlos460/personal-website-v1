@@ -1,7 +1,6 @@
 // Import Components
 import ProjectCard from '@includes/project_card/index'
 import Tag from '@includes/project_card/tag'
-import { useEffect } from 'react';
 // Import Styled Components
 import { ProjectContainer, Portfolio, ProjectShowcaseTitle } from './styles'
 
@@ -32,6 +31,5 @@ function PortfolioSection(props: { projectList: Array<object> }) {
     </>
   );
 }
-
 
 export default PortfolioSection;
