@@ -13,14 +13,15 @@ function PortfolioSection(props: { projectList: Array<object> }) {
         </ProjectShowcaseTitle>
 
         <ProjectContainer>
-          {props.projectList.map((project: any) => {
+          {props.projectList.map((project: any, index: number) => {
             return (<ProjectCard
+              key={index}
               title={project.title}
               description={project.description}
               github={project.github}
               link={project.url}
-              tags={project.tags.map((tag: string) => {
-                return <Tag>{tag}</Tag>
+              tags={project.tags.map((tag: string, index: number) => {
+                return <Tag key={index}>{tag}</Tag>
               })}
               imageUrl={project.img}
             />)
@@ -33,3 +34,4 @@ function PortfolioSection(props: { projectList: Array<object> }) {
 }
 
 export default PortfolioSection;
+

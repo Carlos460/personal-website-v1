@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 export const Header = styled.section`
   padding: 0rem 15% 0rem;
   min-height: 100vh;

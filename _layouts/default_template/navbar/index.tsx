@@ -1,28 +1,22 @@
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 export default function Navbar() {
-  const [navbarHidden, setNavbarHidden] = useState('');
   const [navbarTransparent, setNavbarTransparent] = useState('transparent');
-  const [previouseScrollPosition, setPreviouseScrollPostion] = useState(0);
 
   useEffect(() => {
     window.onscroll = () => {
       const currentScrollPosition = window.pageYOffset;
-      currentScrollPosition < previouseScrollPosition
-        ? setNavbarHidden('show-navbar')
-        : setNavbarHidden('hide-navbar');
-      setPreviouseScrollPostion(currentScrollPosition);
 
       currentScrollPosition < 40
         ? setNavbarTransparent('transparent')
         : setNavbarTransparent('');
     };
-  }, [previouseScrollPosition]);
+  }, [window.pageYOffset]);
 
   return (
     <div>
-      <div className={`navbar ${navbarHidden} ${navbarTransparent}`}>
+      <div className={`navbar ${navbarTransparent}`}>
         <h1 className="brand-name">
           <Link href="/">
             <a className="link">Carlos Flores</a>
@@ -30,11 +24,24 @@ export default function Navbar() {
         </h1>
         <ul className="link-list">
           <Link href="/#portfolio" passHref>
-            <a className="link"><b>Porfolio</b></a>
+            <a className="link">
+              <b>Porfolio</b>
+            </a>
           </Link>
-          <a className="link" href='mailto:carlosfloresalex@gmail.com?subject=Greetings from:' target='_blank'><b>Contact</b></a>
-          <Link href='https://drive.google.com/file/d/1WoYpNKDvkWbdiN2oTzjRY3j3lJloqzCT/view?usp=sharing' passHref>
-            <a className="link" target='_blank'><b>Resume</b></a>
+          <a
+            className="link"
+            href="mailto:carlosfloresalex@gmail.com?subject=Greetings from:"
+            target="_blank"
+          >
+            <b>Contact</b>
+          </a>
+          <Link
+            href="https://drive.google.com/file/d/1WoYpNKDvkWbdiN2oTzjRY3j3lJloqzCT/view?usp=sharing"
+            passHref
+          >
+            <a className="link" target="_blank">
+              <b>Resume</b>
+            </a>
           </Link>
         </ul>
       </div>
@@ -48,18 +55,12 @@ export default function Navbar() {
           justify-content: space-between;
           position: fixed;
           z-index: 10;
-          top: 0rem;
-          transition: top 0.2s, background-color 0.2s;
-          background-color: rgba(0,0,0,0.9);
-        }
-        .hide-navbar {
-          top: -5rem;
-        }
-        .show-navbar{
-          top: 0rem;
+          transition: height 0.2s, background-color 0.2s;
+          background-color: rgba(0, 0, 0);
         }
         .transparent {
-          background-color: rgba(0,0,0,0);
+          height: 5rem;
+          background-color: rgba(0, 0, 0, 0);
         }
         .brand-name {
           margin: auto 0rem;
@@ -67,7 +68,7 @@ export default function Navbar() {
         }
         .link-list {
           list-style: none;
-          margin: auto 0rem;;
+          margin: auto 0rem;
           display: flex;
           width: 30rem;
           justify-content: space-between;
@@ -87,11 +88,11 @@ export default function Navbar() {
             margin: 0rem 0rem 0rem auto;
           }
         }
-        @media only screen and (max-width: 850px){
-          .brand-name{
+        @media only screen and (max-width: 850px) {
+          .brand-name {
             display: none;
           }
-          .link-list{
+          .link-list {
             width: 100%;
             margin: 0rem;
             padding: 0.8rem 0rem;

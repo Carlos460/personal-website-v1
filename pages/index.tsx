@@ -1,8 +1,8 @@
-import HomepageLayout from '@layouts/homepage_layout/index.tsx'
-import { GetStaticProps } from 'next';
-import PortfolioSection from '@layouts/homepage_layout/portfolio_section'
+import HomepageLayout from '@layouts/homepage_layout/index.tsx';
+import { GetServerSideProps } from 'next';
+import PortfolioSection from '@layouts/homepage_layout/portfolio_section';
 
-export default function Home(props: { projects: Array<object>, imageListRaw: any }) {
+export default function Home(props: { projects: Array<object> }) {
   return (
     <HomepageLayout>
       <PortfolioSection projectList={props.projects} />
@@ -11,16 +11,15 @@ export default function Home(props: { projects: Array<object>, imageListRaw: any
 }
 
 type Project = {
-  title: string
-  tags: string[]
-  description: string
-  url: string
-  github: string
-  img: string
-}
+  title: string;
+  tags: string[];
+  description: string;
+  url: string;
+  github: string;
+  img: string;
+};
 
-export const getStaticProps: GetStaticProps = async () => {
-
+export const getServerSideProps: GetServerSideProps = async () => {
   const token = process.env.CONTENTFUL_ACCESS_TOKEN;
   const spaceId = process.env.CONTENTFUL_SPACE_ID;
   const url = `https://cdn.contentful.com/spaces/${spaceId}/entries?access_token=${token}`;
@@ -30,20 +29,22 @@ export const getStaticProps: GetStaticProps = async () => {
   const projectListRaw = data.items;
   const imageListRaw = data.includes.Asset;
 
-  let projects: Array<object> = projectListRaw.map((item: any) => {
+  let projects = projectListRaw.map((itemProject: any) => {
     let project: Project;
-    const field = item.fields;
+    const field = itemProject.fields;
     const title = field.title;
 
     const ImgUrl = (givenTitle: string, givenImageArray: any) => {
       let imageUrl: string = '';
 
       givenImageArray.forEach((image: any) => {
-        givenTitle === image.fields.title ? imageUrl = `${image.fields.file.url}` : '';
+        givenTitle === image.fields.title
+          ? (imageUrl = `${image.fields.file.url}`)
+          : '';
       });
 
       return imageUrl;
-    }
+    };
 
     project = {
       title: field.title,
@@ -51,15 +52,14 @@ export const getStaticProps: GetStaticProps = async () => {
       description: field.description,
       url: field.url || '',
       github: field.github || '',
-      img: `${ImgUrl(title, imageListRaw)}`
-    }
+      img: `${ImgUrl(title, imageListRaw)}`,
+    };
     return project;
   });
 
   return {
     props: {
       projects,
-      imageListRaw
-    }
-  }
-}
+    },
+  };
+};
