@@ -1,12 +1,15 @@
-import HomepageLayout from '@layouts/homepage_layout/index.tsx';
-import { GetServerSideProps } from 'next';
-import PortfolioSection from '@layouts/homepage_layout/portfolio_section';
+// Import Layout Components
+import DefaultLayout from '@layouts/default_template';
+import { GetStaticProps } from 'next';
+import PortfolioSection from '@layouts/home_layout/portfolio_section';
+import HeaderSection from '@layouts/home_layout/header_section';
 
 export default function Home(props: { projects: Array<object> }) {
   return (
-    <HomepageLayout>
+    <DefaultLayout title="Home">
+      <HeaderSection></HeaderSection>
       <PortfolioSection projectList={props.projects} />
-    </HomepageLayout>
+    </DefaultLayout>
   );
 }
 
@@ -19,7 +22,7 @@ type Project = {
   img: string;
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const token = process.env.CONTENTFUL_ACCESS_TOKEN;
   const spaceId = process.env.CONTENTFUL_SPACE_ID;
   const url = `https://cdn.contentful.com/spaces/${spaceId}/entries?access_token=${token}`;
@@ -29,7 +32,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const projectListRaw = data.items;
   const imageListRaw = data.includes.Asset;
 
-  let projects = projectListRaw.map((itemProject: any) => {
+  let projects: Array<object> = projectListRaw.map((itemProject: any) => {
     let project: Project;
     const field = itemProject.fields;
     const title = field.title;

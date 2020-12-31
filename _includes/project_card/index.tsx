@@ -1,10 +1,15 @@
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 // Import Styles
 import { useState } from 'react';
 import {
-  Button, ButtonContainer, ProjectCardContainer, ProjectCardTitle,
-  TagContainer, DesccriptionContainer, ProjectCardImage, ProjectCardContent
-} from './styles'
+  Button,
+  ButtonContainer,
+  ProjectCardContainer,
+  ProjectCardTitle,
+  DesccriptionContainer,
+  ProjectCardImage,
+  ProjectCardContent,
+} from './styles';
 
 interface ProjectCardProps {
   github: string;
@@ -17,51 +22,45 @@ interface ProjectCardProps {
 
 Button.defaultProps = {
   theme: {
-    textColor: `black`,
+    textColor: `var(--white)`,
     border: `none`,
-    bgColor: `var(--yellow)`
-  }
-}
+    bgColor: `var(--orange)`,
+  },
+};
 
 const disabledButton = {
-  textColor: `white`,
-  border: `solid var(--yellow) 2px`,
-  bgColor: `transparent`
-}
+  textColor: `#8a8a8a`,
+  border: `solid #8a8a8a 2px`,
+  bgColor: `transparent`,
+};
 
 export default function ProjectCard(props: ProjectCardProps) {
   const [hasGithubLink] = useState(props.github === '');
-  const [hasUrlLink] = useState(props.link === '')
+  const [hasUrlLink] = useState(props.link === '');
   return (
     <ProjectCardContainer>
-      <ProjectCardImage customImage={props.imageUrl}>
-      </ProjectCardImage>
+      <ProjectCardImage customImage={props.imageUrl}></ProjectCardImage>
       <ProjectCardContent>
         <ProjectCardTitle>{props.title}</ProjectCardTitle>
-        <TagContainer>
-          {props.tags}
-        </TagContainer>
-        <DesccriptionContainer>
-          {props.description}
-        </DesccriptionContainer>
+        <DesccriptionContainer>{props.description}</DesccriptionContainer>
         <ButtonContainer>
-          <motion.div
-            whileHover={{ y: -3 }}
-            whileTap={{ y: 2 }}
-          >
-            {hasUrlLink
-              ? <Button theme={disabledButton}>Offline</Button>
-              : <Button href={props.link} target={`_blank`}>Visit Webstite</Button>
-            }
+          <motion.div whileHover={{ y: -3 }} whileTap={{ y: 2 }}>
+            {hasUrlLink ? (
+              <Button theme={disabledButton}>Offline</Button>
+            ) : (
+              <Button href={props.link} target={`_blank`}>
+                Visit Webstite
+              </Button>
+            )}
           </motion.div>
-          <motion.div
-            whileHover={{ y: -3 }}
-            whileTap={{ y: 2 }}
-          >
-            {hasGithubLink
-              ? <Button theme={disabledButton}>Private</Button>
-              : <Button href={props.github} target={`_blank`}>View Github</Button>
-            }
+          <motion.div whileHover={{ y: -3 }} whileTap={{ y: 2 }}>
+            {hasGithubLink ? (
+              <Button theme={disabledButton}>Private</Button>
+            ) : (
+              <Button href={props.github} target={`_blank`}>
+                View Github
+              </Button>
+            )}
           </motion.div>
         </ButtonContainer>
       </ProjectCardContent>

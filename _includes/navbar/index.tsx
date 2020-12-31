@@ -3,16 +3,16 @@ import { useEffect, useState } from 'react';
 
 export default function Navbar() {
   const [navbarTransparent, setNavbarTransparent] = useState('transparent');
+  const [currentScrollPosition, setCurrentScrollPosition] = useState(0);
 
   useEffect(() => {
     window.onscroll = () => {
-      const currentScrollPosition = window.pageYOffset;
-
-      currentScrollPosition < 40
+      setCurrentScrollPosition(window.pageYOffset);
+      currentScrollPosition < 80
         ? setNavbarTransparent('transparent')
         : setNavbarTransparent('');
     };
-  }, [window.pageYOffset]);
+  }, [currentScrollPosition]);
 
   return (
     <div>
