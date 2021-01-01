@@ -1,8 +1,8 @@
 // Import Layout Components
 import { GetStaticProps } from 'next';
+import { motion } from 'framer-motion';
 
 import Section from '@includes/section';
-import ContactCard from '@includes/contact_card';
 import ProjectCard from '@includes/project_card';
 import Navbar from '@includes/navbar';
 
@@ -10,41 +10,57 @@ import * as S from '@includes/text';
 
 import DefaultLayout from '@layouts/default_template';
 
+const headFadeIn = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0 },
+};
+
+const projectFadeIn = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0 },
+};
+
 export default function Home(props: { projects: Array<object> }) {
   return (
     <DefaultLayout title="Home">
-      <Section id={'heading'}>
-        <div style={{ textAlign: 'center' }}>
-          <S.Heading>Hello there 😎</S.Heading>
-          <S.SubHeading>
-            I'm Carlos, a Web Developer working with Javascript, React.js, and
-            Node.js!
-          </S.SubHeading>
-        </div>
-      </Section>
-      <Navbar />
-      <Section id={'portfolio'}>
-        {props.projects.map((project: any, index: number) => {
-          return (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              github={project.github}
-              link={project.url}
-              imageUrl={project.img}
-            />
-          );
-        })}
-      </Section>
-      <Section id="contact">
-        <S.Heading>Get in touch</S.Heading>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <ContactCard></ContactCard>
-          <ContactCard></ContactCard>
-          <ContactCard></ContactCard>
-        </div>
-      </Section>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        transition={{ delay: 0.5 }}
+        variants={headFadeIn}
+      >
+        <Section id={'heading'}>
+          <div style={{ textAlign: 'center' }}>
+            <S.Heading>Hello there 😎</S.Heading>
+            <S.SubHeading>
+              I'm Carlos, a Web Developer working with Javascript, React.js, and
+              Node.js!
+            </S.SubHeading>
+          </div>
+          <Navbar />
+        </Section>
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        transition={{ delay: 0.5 }}
+        variants={projectFadeIn}
+      >
+        <Section id={'portfolio'}>
+          {props.projects.map((project: any, index: number) => {
+            return (
+              <ProjectCard
+                key={index}
+                title={project.title}
+                description={project.description}
+                github={project.github}
+                link={project.url}
+                imageUrl={project.img}
+              />
+            );
+          })}
+        </Section>
+      </motion.div>
     </DefaultLayout>
   );
 }

@@ -25,6 +25,7 @@ export default function Navbar() {
           width: 100%;
           display: flex;
           justify-content: center;
+          margin-top: 20px;
         }
         .link-list {
           list-style: none;
