@@ -1,7 +1,9 @@
+import * as S from './style';
+
 function ContactCard(props: any) {
   return (
     <>
-      <div>{props.children}</div>
+      <S.ContactCard>{props.children}</S.ContactCard>
     </>
   );
 }

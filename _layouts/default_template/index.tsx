@@ -16,10 +16,19 @@ export default function DefaultLayout(props: {
         />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta property="og:image" content="/img/portfolio.png"></meta>
+        <link rel="shortcut icon" href="/favicon.png" />
       </Head>
-      <Navbar />
-      {props.children}
-      <Footer></Footer>
+      <div
+        style={{
+          width: '100%',
+        }}
+      >
+        <div style={{ maxWidth: '1800px', margin: '0px auto' }}>
+          {props.children}
+          <Footer></Footer>
+        </div>
+      </div>
+
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
@@ -30,7 +39,7 @@ export default function DefaultLayout(props: {
           --blue-dark: #072336;
           --blue: #067eed;
           --blue-light: #c1e6ff;
-          --orange: #ff7c1f;
+          --orange: #7cda6a;
         }
         * {
           scroll-behavior: smooth;

@@ -4,9 +4,11 @@ export const ProjectCardContainer = styled.section`
   position: relative;
   display: flex;
   flex-direction: row;
+  transition: transform 0.2s ease;
+
   margin: 48px auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  @media (max-width: 1200px) {
+  @media (max-width: 1600px) {
     flex-direction: column;
     justify-content: center;
   }
@@ -26,19 +28,19 @@ export const ProjectCardContent = styled.div`
   padding: 32px;
   width: 560px;
   height: 400px;
-  background-color: var(--blue-dark);
+  background-color: var(--white);
   @media (max-width: 720px) {
     min-height: 480px;
     width: 100%;
   }
 `;
 export const ProjectCardTitle = styled.h1`
-  color: var(--white);
+  color: var(--black);
   font-size: 32px;
 `;
 export const DesccriptionContainer = styled.div`
   margin: 30px 0px 0px;
-  color: white;
+  color: var(--black);
   font-size: 16px;
   line-height: 25px;
   @media (max-width: 720px) {

@@ -1,14 +1,50 @@
 // Import Layout Components
-import DefaultLayout from '@layouts/default_template';
 import { GetStaticProps } from 'next';
-import PortfolioSection from '@layouts/home_layout/portfolio_section';
-import HeaderSection from '@layouts/home_layout/header_section';
+
+import Section from '@includes/section';
+import ContactCard from '@includes/contact_card';
+import ProjectCard from '@includes/project_card';
+import Navbar from '@includes/navbar';
+
+import * as S from '@includes/text';
+
+import DefaultLayout from '@layouts/default_template';
 
 export default function Home(props: { projects: Array<object> }) {
   return (
     <DefaultLayout title="Home">
-      <HeaderSection></HeaderSection>
-      <PortfolioSection projectList={props.projects} />
+      <Section id={'heading'}>
+        <div style={{ textAlign: 'center' }}>
+          <S.Heading>Hello there 😎</S.Heading>
+          <S.SubHeading>
+            I'm Carlos, a Web Developer working with Javascript, React.js, and
+            Node.js!
+          </S.SubHeading>
+        </div>
+      </Section>
+      <Navbar />
+      <Section id={'portfolio'}>
+        {props.projects.map((project: any, index: number) => {
+          return (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              github={project.github}
+              link={project.url}
+              imageUrl={project.img}
+            />
+          );
+        })}
+      </Section>
+      <Section id="contact">
+        <S.Heading>Get in touch</S.Heading>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <ContactCard></ContactCard>
+          <ContactCard></ContactCard>
+          <ContactCard></ContactCard>
+        </div>
+      </Section>
     </DefaultLayout>
   );
 }

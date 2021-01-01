@@ -2,37 +2,11 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
 export default function Navbar() {
-  const [navbarTransparent, setNavbarTransparent] = useState('transparent');
-  const [currentScrollPosition, setCurrentScrollPosition] = useState(0);
-
-  useEffect(() => {
-    window.onscroll = () => {
-      setCurrentScrollPosition(window.pageYOffset);
-      currentScrollPosition < 80
-        ? setNavbarTransparent('transparent')
-        : setNavbarTransparent('');
-    };
-  }, [currentScrollPosition]);
-
   return (
     <div>
-      <div className={`navbar ${navbarTransparent}`}>
-        <h1 className="brand-name">
-          <Link href="/">
-            <a className="link">Carlos Flores</a>
-          </Link>
-        </h1>
+      <div className={`navbar`}>
         <ul className="link-list">
-          <Link href="/#portfolio" passHref>
-            <a className="link">
-              <b>Porfolio</b>
-            </a>
-          </Link>
-          <a
-            className="link"
-            href="mailto:carlosfloresalex@gmail.com?subject=Greetings from:"
-            target="_blank"
-          >
+          <a className="link" href="/#contact">
             <b>Contact</b>
           </a>
           <Link
@@ -49,54 +23,25 @@ export default function Navbar() {
       <style jsx>{`
         .navbar {
           width: 100%;
-          height: 4rem;
-          padding: 0rem 15%;
           display: flex;
-          justify-content: space-between;
-          position: fixed;
-          z-index: 10;
-          transition: height 0.2s, background-color 0.2s;
-          background-color: rgba(0, 0, 0);
-        }
-        .transparent {
-          height: 5rem;
-          background-color: rgba(0, 0, 0, 0);
-        }
-        .brand-name {
-          margin: auto 0rem;
-          color: white;
+          justify-content: center;
         }
         .link-list {
           list-style: none;
-          margin: auto 0rem;
+          padding: 0px 8px;
           display: flex;
-          width: 30rem;
-          justify-content: space-between;
+          border-top: solid 2px black;
         }
 
         .link {
-          height: 3rem;
-          width: 8rem;
-          align-text: center;
+          text-align: right;
           padding: 0.8rem 0rem;
+          margin: 0px 15px;
           text-decoration: none;
-          color: white;
-          text-align: center;
+          color: black;
         }
-        @media only screen and (max-width: 600px) {
-          .link-list {
-            margin: 0rem 0rem 0rem auto;
-          }
-        }
-        @media only screen and (max-width: 850px) {
-          .brand-name {
-            display: none;
-          }
-          .link-list {
-            width: 100%;
-            margin: 0rem;
-            padding: 0.8rem 0rem;
-          }
+        .link:hover {
+          color: var(--blue);
         }
       `}</style>
     </div>

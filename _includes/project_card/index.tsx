@@ -24,7 +24,7 @@ Button.defaultProps = {
   theme: {
     textColor: `var(--white)`,
     border: `none`,
-    bgColor: `var(--orange)`,
+    bgColor: `var(--blue)`,
   },
 };
 

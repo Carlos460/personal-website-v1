@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const ContactCard = styled.div`
-  width: 50px;
-  background-color: var(--blue-light);
+  margin: 0px 25px;
+  width: 350px;
+  height: 450px;
+  border-radius: 5px;
+  background-color: var(--blue);
 `;

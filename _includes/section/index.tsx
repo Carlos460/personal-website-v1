@@ -1,12 +1,18 @@
 import { gestureProps } from 'framer-motion/types/motion/features/gestures';
 import * as S from './style';
 
-function Section(props: any) {
+import { FunctionComponent } from 'react';
+
+type SectionProps = {
+  id: string;
+};
+
+const Section: FunctionComponent<SectionProps> = ({ id, children }) => {
   return (
     <>
-      <S.Container>{props.children}</S.Container>
+      <S.Container id={id}>{children}</S.Container>
     </>
   );
-}
+};
 
 export default Section;
