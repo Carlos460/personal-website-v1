@@ -6,7 +6,7 @@ export const ProjectCardContainer = styled.section`
   flex-direction: row;
   transition: transform 0.2s ease;
 
-  margin: 48px auto;
+  margin: 48px auto 100px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   @media (max-width: 1600px) {
     flex-direction: column;
@@ -30,7 +30,7 @@ export const ProjectCardContent = styled.div`
   height: 400px;
   background-color: var(--white);
   @media (max-width: 720px) {
-    min-height: 480px;
+    height: auto;
     width: 100%;
   }
 `;
@@ -45,6 +45,7 @@ export const DesccriptionContainer = styled.div`
   line-height: 25px;
   @media (max-width: 720px) {
     font-size: 14.4px;
+    margin-bottom: 50px;
   }
 `;
 // Button
