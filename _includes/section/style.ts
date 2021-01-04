@@ -7,5 +7,5 @@ export const Container = styled.section`
 
   width: 100%;
   padding: 80px 10px 20px;
-  background-color: var(--white);
+  background-color: var(--dark);
 `;

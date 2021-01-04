@@ -3,14 +3,13 @@ import styled from 'styled-components';
 export const ProjectCardContainer = styled.section`
   position: relative;
   display: flex;
+  justify-content: center;
   flex-direction: row;
   transition: transform 0.2s ease;
 
   margin: 48px auto 100px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   @media (max-width: 1600px) {
     flex-direction: column;
-    justify-content: center;
   }
 `;
 export const ProjectCardImage = styled.div<{ customImage?: string }>`
@@ -18,29 +17,39 @@ export const ProjectCardImage = styled.div<{ customImage?: string }>`
   background-size: cover;
   height: 400px;
   width: 560px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   @media (max-width: 720px) {
     width: 100%;
+  }
+  @media (max-width: 1600px) {
+    margin: 0px auto;
   }
 `;
 // Content
 export const ProjectCardContent = styled.div`
   position: relative;
+
   padding: 32px;
   width: 560px;
   height: 400px;
-  background-color: var(--white);
+  background-color: var(--dark-secondary);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
   @media (max-width: 720px) {
     height: auto;
     width: 100%;
   }
+  @media (max-width: 1600px) {
+    margin: 0px auto;
+  }
 `;
 export const ProjectCardTitle = styled.h1`
-  color: var(--black);
+  color: var(--white);
   font-size: 32px;
 `;
 export const DesccriptionContainer = styled.div`
   margin: 30px 0px 0px;
-  color: var(--black);
+  color: var(--white-secondary);
   font-size: 16px;
   line-height: 25px;
   @media (max-width: 720px) {
@@ -79,7 +88,7 @@ export const Button = styled.a<ButtonProps>`
   appearance: button;
   text-decoration: none;
   text-align: center;
-  padding: 8.32px 0px;
+  padding: 9px 0px;
   margin: 8px 8px 8px;
   width: 128px;
   height: 40px;

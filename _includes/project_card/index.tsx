@@ -23,7 +23,7 @@ interface ProjectCardProps {
 Button.defaultProps = {
   theme: {
     textColor: `var(--white)`,
-    border: `none`,
+    border: `solid transparent 2px`,
     bgColor: `var(--blue)`,
   },
 };
@@ -34,36 +34,48 @@ const disabledButton = {
   bgColor: `transparent`,
 };
 
+const FadeIn = {
+  hidden: { opacity: 0, x: 50 },
+  visible: { opacity: 1, x: 0 },
+};
+
 export default function ProjectCard(props: ProjectCardProps) {
   const [hasGithubLink] = useState(props.github === '');
   const [hasUrlLink] = useState(props.link === '');
   return (
-    <ProjectCardContainer>
-      <ProjectCardImage customImage={props.imageUrl}></ProjectCardImage>
-      <ProjectCardContent>
-        <ProjectCardTitle>{props.title}</ProjectCardTitle>
-        <DesccriptionContainer>{props.description}</DesccriptionContainer>
-        <ButtonContainer>
-          <motion.div whileHover={{ y: -3 }} whileTap={{ y: 2 }}>
-            {hasUrlLink ? (
-              <Button theme={disabledButton}>Offline</Button>
-            ) : (
-              <Button href={props.link} target={`_blank`}>
-                Visit Webstite
-              </Button>
-            )}
-          </motion.div>
-          <motion.div whileHover={{ y: -3 }} whileTap={{ y: 2 }}>
-            {hasGithubLink ? (
-              <Button theme={disabledButton}>Private</Button>
-            ) : (
-              <Button href={props.github} target={`_blank`}>
-                View Github
-              </Button>
-            )}
-          </motion.div>
-        </ButtonContainer>
-      </ProjectCardContent>
-    </ProjectCardContainer>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      transition={{ delay: 0.5 }}
+      variants={FadeIn}
+    >
+      <ProjectCardContainer>
+        <ProjectCardImage customImage={props.imageUrl}></ProjectCardImage>
+        <ProjectCardContent>
+          <ProjectCardTitle>{props.title}</ProjectCardTitle>
+          <DesccriptionContainer>{props.description}</DesccriptionContainer>
+          <ButtonContainer>
+            <motion.div whileHover={{ y: -3 }} whileTap={{ y: 2 }}>
+              {hasUrlLink ? (
+                <Button theme={disabledButton}>Offline</Button>
+              ) : (
+                <Button href={props.link} target={`_blank`}>
+                  Visit Webstite
+                </Button>
+              )}
+            </motion.div>
+            <motion.div whileHover={{ y: -3 }} whileTap={{ y: 2 }}>
+              {hasGithubLink ? (
+                <Button theme={disabledButton}>Private</Button>
+              ) : (
+                <Button href={props.github} target={`_blank`}>
+                  View Github
+                </Button>
+              )}
+            </motion.div>
+          </ButtonContainer>
+        </ProjectCardContent>
+      </ProjectCardContainer>
+    </motion.div>
   );
 }

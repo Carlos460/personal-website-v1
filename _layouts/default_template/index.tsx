@@ -33,13 +33,17 @@ export default function DefaultLayout(props: {
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
         :root {
-          --white: #ffffff;
-          --dark: #191919;
-          --dark-secondary: #000b14;
+          --white: #e9e6e1;
+          --white-secondary: #d4d4d4;
+          --dark: #131212;
+          --dark-secondary: #202020;
           --blue-dark: #072336;
           --blue: #067eed;
           --blue-light: #c1e6ff;
           --orange: #7cda6a;
+        }
+        body {
+          background-color: var(--dark);
         }
         * {
           scroll-behavior: smooth;

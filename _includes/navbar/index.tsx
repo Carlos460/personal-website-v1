@@ -31,7 +31,7 @@ export default function Navbar() {
           list-style: none;
           padding: 0px 8px;
           display: flex;
-          border-top: solid 2px black;
+          border-top: solid 2px var(--white);
         }
 
         .link {
@@ -39,7 +39,7 @@ export default function Navbar() {
           padding: 0.8rem 0rem;
           margin: 0px 15px;
           text-decoration: none;
-          color: black;
+          color: var(--white);
         }
         .link:hover {
           color: var(--blue);

@@ -15,21 +15,16 @@ const headFadeIn = {
   visible: { opacity: 1, x: 0 },
 };
 
-const projectFadeIn = {
-  hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0 },
-};
-
 export default function Home(props: { projects: Array<object> }) {
   return (
     <DefaultLayout title="Home">
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        transition={{ delay: 0.5 }}
-        variants={headFadeIn}
-      >
-        <Section id={'heading'}>
+      <Section id={'heading'}>
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.5 }}
+          variants={headFadeIn}
+        >
           <div style={{ textAlign: 'center' }}>
             <S.Heading>Hello there 😎</S.Heading>
             <S.SubHeading>
@@ -38,29 +33,22 @@ export default function Home(props: { projects: Array<object> }) {
             </S.SubHeading>
           </div>
           <Navbar />
-        </Section>
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        transition={{ delay: 0.5 }}
-        variants={projectFadeIn}
-      >
-        <Section id={'portfolio'}>
-          {props.projects.map((project: any, index: number) => {
-            return (
-              <ProjectCard
-                key={index}
-                title={project.title}
-                description={project.description}
-                github={project.github}
-                link={project.url}
-                imageUrl={project.img}
-              />
-            );
-          })}
-        </Section>
-      </motion.div>
+        </motion.div>
+      </Section>
+      <Section id={'portfolio'}>
+        {props.projects.map((project: any, index: number) => {
+          return (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              description={project.description}
+              github={project.github}
+              link={project.url}
+              imageUrl={project.img}
+            />
+          );
+        })}
+      </Section>
     </DefaultLayout>
   );
 }
