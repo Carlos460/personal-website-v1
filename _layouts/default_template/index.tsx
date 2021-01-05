@@ -32,15 +32,19 @@ export default function DefaultLayout(props: {
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
         :root {
-          --white: #e9e6e1;
-          --white-secondary: #d4d4d4;
+          --light: #f5f4f4;
+          --light-secondary: #d4d4d4;
           --dark: #131212;
           --dark-secondary: #202020;
-          --blue-dark: #072336;
-          --blue: #067eed;
-          --blue-light: #c1e6ff;
-          --orange: #7cda6a;
+          --primary: #fcf700;
+          --primary-dark: #072336;
+          --primary-light: #95d5ff;
+          --secondary: #ffa742;
+          --disabled: #8a8a8a;
+          --warning: #e40000;
         }
         body {
           background-color: var(--dark);
@@ -53,6 +57,12 @@ export default function DefaultLayout(props: {
           margin: 0px;
         }
       `}</style>
+      <script
+        type="text/javascript"
+        src="https://platform.linkedin.com/badges/js/profile.js"
+        async
+        defer
+      ></script>
     </>
   );
 }

@@ -31,7 +31,7 @@ export default function Navbar() {
           list-style: none;
           padding: 0px 8px;
           display: flex;
-          border-top: solid 2px var(--white);
+          border-top: solid 2px var(--light-secondary);
         }
 
         .link {
@@ -39,10 +39,11 @@ export default function Navbar() {
           padding: 0.8rem 0rem;
           margin: 0px 15px;
           text-decoration: none;
-          color: var(--white);
+          color: var(--light-secondary);
+          transition: color 0.2s ease-out;
         }
         .link:hover {
-          color: var(--blue);
+          color: var(--primary);
         }
       `}</style>
     </div>

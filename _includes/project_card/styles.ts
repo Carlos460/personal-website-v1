@@ -17,7 +17,7 @@ export const ProjectCardImage = styled.div<{ customImage?: string }>`
   background-size: cover;
   height: 400px;
   width: 560px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
   @media (max-width: 720px) {
     width: 100%;
   }
@@ -33,7 +33,7 @@ export const ProjectCardContent = styled.div`
   width: 560px;
   height: 400px;
   background-color: var(--dark-secondary);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
 
   @media (max-width: 720px) {
     height: auto;
@@ -44,12 +44,12 @@ export const ProjectCardContent = styled.div`
   }
 `;
 export const ProjectCardTitle = styled.h1`
-  color: var(--white);
+  color: var(--light);
   font-size: 32px;
 `;
 export const DesccriptionContainer = styled.div`
   margin: 30px 0px 0px;
-  color: var(--white-secondary);
+  color: var(--light-secondary);
   font-size: 16px;
   line-height: 25px;
   @media (max-width: 720px) {

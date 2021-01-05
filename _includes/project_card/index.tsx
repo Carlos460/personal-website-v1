@@ -22,15 +22,15 @@ interface ProjectCardProps {
 
 Button.defaultProps = {
   theme: {
-    textColor: `var(--white)`,
+    textColor: `var(--dark)`,
     border: `solid transparent 2px`,
-    bgColor: `var(--blue)`,
+    bgColor: `var(--primary)`,
   },
 };
 
 const disabledButton = {
-  textColor: `#8a8a8a`,
-  border: `solid #8a8a8a 2px`,
+  textColor: `var(--disabled)`,
+  border: `solid var(--disabled) 2px`,
   bgColor: `transparent`,
 };
 
