@@ -16,36 +16,54 @@ function ContactCard(props: any) {
         transition={{ delay: 0.5 }}
         variants={fadeIn}
       >
-        <S.ContactCard>
-          <S.ContactingName>Carlos Flores</S.ContactingName>
-          <S.ToolTip>
-            <S.ContactBar>
-              <S.ContactLink
-                onClick={() => {
-                  navigator.clipboard.writeText('carlosfloresalex@gmail.com');
-                }}
+        <div style={{ position: 'relative' }}>
+          <S.ToolTip />
+          <S.ContactCard>
+            <S.TitleContainer>
+              <S.Title>
+                <h1>Web Developer</h1>
+              </S.Title>
+            </S.TitleContainer>
+            <S.ContactList>
+              <S.ContactBar>
+                <S.LogoContainer>
+                  <S.Logo src={`/icons/gmail.png`}></S.Logo>
+                </S.LogoContainer>
+                <S.ContactLink
+                  onClick={() => {
+                    navigator.clipboard.writeText('carlosfloresalex@gmail.com');
+                  }}
+                >
+                  carlosflroesalex@gmail.com
+                </S.ContactLink>
+              </S.ContactBar>
+              <form
+                action="https://www.linkedin.com/in/carlos-flores-1795981b6/"
+                target="_blank"
               >
-                📮 Email me at carlosflroesalex@gmail.com
-              </S.ContactLink>
-            </S.ContactBar>
-          </S.ToolTip>
-          <S.ContactBar>
-            <S.ContactLink
-              href="https://www.linkedin.com/in/carlos-flores-1795981b6/"
-              target="_blank"
-            >
-              💬 You can contact me on Linkedin
-            </S.ContactLink>
-          </S.ContactBar>
+                <S.ContactBar type="submit">
+                  <S.LogoContainer>
+                    <S.Logo src={'/icons/linkedin.png'}></S.Logo>
+                  </S.LogoContainer>
+                  <S.ContactLink>carlos-flores-460</S.ContactLink>
+                </S.ContactBar>
+              </form>
+              <form action="https://github.com/Carlos460" target="_blank">
+                <S.ContactBar type="submit">
+                  <S.LogoContainer>
+                    <S.Logo
+                      style={{ filter: 'invert(1)' }}
+                      src={`/icons/github.png`}
+                    ></S.Logo>
+                  </S.LogoContainer>
+                  <S.ContactLink>Carlos460</S.ContactLink>
+                </S.ContactBar>
+              </form>
+            </S.ContactList>
 
-          <S.ContactBar>
-            <S.ContactLink href="https://github.com/Carlos460" target="_blank">
-              👾 View my public repositories on Github
-            </S.ContactLink>
-          </S.ContactBar>
-
-          {props.children}
-        </S.ContactCard>
+            {props.children}
+          </S.ContactCard>
+        </div>
       </motion.div>
     </>
   );

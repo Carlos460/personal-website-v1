@@ -39,6 +39,7 @@ export default function DefaultLayout(props: {
           --light-secondary: #d4d4d4;
           --dark: #131212;
           --dark-secondary: #202020;
+          --dark-light: #252525;
           --primary: #fcf700;
           --primary-dark: #072336;
           --primary-light: #95d5ff;
