@@ -62,7 +62,7 @@ export const ContactBar = styled.button`
   height: 75px;
   display: flex;
   cursor: pointer;
-  transition: background-color 0.3s ease-out, box-shadow 0.5s ease;
+  transition: background-color 0.2s ease-in, box-shadow 0.2s ease;
   &:hover {
     background-color: var(--dark-light);
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
