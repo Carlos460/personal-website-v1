@@ -4,6 +4,7 @@ import styled from 'styled-components';
 export const ContactCard = styled.div`
   display: flex;
   width: 650px;
+  margin: 50px auto 200px;
   border-radius: 5px;
   background-color: var(--dark-secondary);
   overflow: hidden;
@@ -13,45 +14,33 @@ export const ContactCard = styled.div`
       opacity: 1;
     }
   }
-  @media (max-width: 800px) {
+  @media (max-width: 700px) {
     width: 100%;
-  }
-`;
-
-export const ToolTip = styled.div`
-  position: relative;
-  &::after {
-    content: 'Copy Email';
-    position: absolute;
-    opacity: 0;
-    top: -20px;
-    right: 0;
-    left: 0;
-    margin: 0px auto;
-    z-index: 10;
-    text-align: center;
-    width: 120px;
-    height: 25px;
-    padding-top: 8px;
-    border-radius: 5px;
-    background-color: var(--light);
-    transition: all 0.2s ease-out;
   }
 `;
 
 export const TitleContainer = styled.div`
   width: 50%;
   display: flex;
+  @media (max-width: 600px) {
+    display: none;
+  }
 `;
 
 export const Title = styled.div`
   margin: auto;
+  text-align: center;
   color: var(--light);
 `;
 
 export const ContactList = styled.div`
   border-left: var(--light) 2px solid;
+  overflow: hidden;
   width: 50%;
+  @media (max-width: 600px) {
+    width: 100%;
+    border: none;
+  }
 `;
 
 export const ContactBar = styled.button`
@@ -64,6 +53,10 @@ export const ContactBar = styled.button`
   cursor: pointer;
   transition: background-color 0.2s ease-in, box-shadow 0.05s ease;
   &:hover {
+    background-color: var(--dark-light);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+  }
+  &:active {
     background-color: var(--dark-light);
     box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
   }
