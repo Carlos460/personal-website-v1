@@ -80,12 +80,11 @@ interface ButtonProps {
   };
 }
 
-export const Button = styled.a<ButtonProps>`
+export const Button = styled.button<ButtonProps>`
   border: ${(props) => props.theme.border};
   background-color: ${(props) => props.theme.bgColor};
   color: ${(props) => props.theme.textColor};
   display: block;
-  appearance: button;
   text-decoration: none;
   text-align: center;
   padding: 9px 0px;

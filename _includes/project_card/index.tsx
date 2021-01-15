@@ -59,18 +59,18 @@ export default function ProjectCard(props: ProjectCardProps) {
               {hasUrlLink ? (
                 <Button theme={disabledButton}>Offline</Button>
               ) : (
-                <Button href={props.link} target={`_blank`}>
-                  Visit Webstite
-                </Button>
+                <form action={props.link} target={`_blank`}>
+                  <Button>Visit Webstite</Button>
+                </form>
               )}
             </motion.div>
             <motion.div whileHover={{ y: -3 }} whileTap={{ y: 2 }}>
               {hasGithubLink ? (
                 <Button theme={disabledButton}>Private</Button>
               ) : (
-                <Button href={props.github} target={`_blank`}>
-                  View Github
-                </Button>
+                <form action={props.github} target={`_blank`}>
+                  <Button>View Github</Button>
+                </form>
               )}
             </motion.div>
           </ButtonContainer>
