@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   margin: 10px;
-  width: 150px;
-  height: 175px;
+  width: 125px;
+  height: 150px;
   background-color: var(--dark-secondary);
 `;
 
@@ -21,8 +21,8 @@ export const ImageLogo = styled.img<ImageLogoProps>`
   transform: translateY(${(props) => props.offSet}px);
   filter: invert(${(props) => props.invertValue});
   margin: auto;
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
 `;
 
 export const DescripotionWrapper = styled.div`

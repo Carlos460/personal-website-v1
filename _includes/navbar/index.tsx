@@ -6,8 +6,8 @@ export default function Navbar() {
     <div>
       <div className={`navbar`}>
         <ul className="link-list">
-          <a className="link" href="/#skills">
-            <b>Skills</b>
+          <a className="link" href="/#about">
+            <b>About</b>
           </a>
           <a className="link" href="/#contact">
             <b>Contact</b>

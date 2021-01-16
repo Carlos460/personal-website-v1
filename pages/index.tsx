@@ -6,6 +6,7 @@ import Section from '@includes/section';
 import ProjectCard from '@includes/project_card';
 import Navbar from '@includes/navbar';
 import SkillCard from '@includes/skill_card';
+import About from '@includes/about';
 
 import * as S from '@includes/text';
 
@@ -50,64 +51,8 @@ export default function Home(props: { projects: Array<object> }) {
           );
         })}
       </Section>
-      <Section id={`skills`}>
-        <div style={{ textAlign: `center` }}>
-          <S.SubHeading>Technologies I Use Daily!</S.SubHeading>
-        </div>
-        <div
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `center`,
-            margin: `50px 0px`,
-          }}
-        >
-          <SkillCard imageUrl={`/icons/javascript.png`}>
-            <h3>JavaScript</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/html-5.png`}>
-            <h3>HTML 5</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/css3.png`}>
-            <h3>CSS 3</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/react.png`}>
-            <h3>React.js</h3>
-          </SkillCard>
-          <SkillCard translateY={35} imageUrl={`/icons/npm.svg`}>
-            <h3>NPM</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/git.png`}>
-            <h3>Git</h3>
-          </SkillCard>
-        </div>
-        <div style={{ textAlign: `center` }}>
-          <S.SubHeading>Technologies I've Used In Projects!</S.SubHeading>
-        </div>
-        <div
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `center`,
-            margin: `50px 0px`,
-          }}
-        >
-          <SkillCard imageUrl={`/icons/nodejs.png`}>
-            <h3>Node.js</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/python.png`}>
-            <h3>Python</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/typescript.png`}>
-            <h3>Typescript</h3>
-          </SkillCard>
-          <SkillCard invert={1} imageUrl={`/icons/expressjs.svg`}>
-            <h3>Express.js</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/mongodb.svg`}>
-            <h3>MongoDB</h3>
-          </SkillCard>
-        </div>
+      <Section id={`about`}>
+        <About />
       </Section>
     </DefaultLayout>
   );
