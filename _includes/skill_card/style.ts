@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 125px;
   height: 150px;
   background-color: var(--dark-secondary);
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.2);
 `;
 
 export const ImageWrapper = styled.div`
