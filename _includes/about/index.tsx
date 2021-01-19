@@ -15,14 +15,15 @@ export default function About() {
             to bring projects to life. I'm currently working with React.js to
             build front end applications and have used Next.js to make my
             portfolio website alongside Contentful. Outside the programming
-            landscape, I love architect, nature, and portrait photography. I'm
-            eager to learn new things and meet new people to work on projects.
+            landscape, I love architecture, nature, and portrait photography.
+            I'm eager to learn new things and meet new people to work on
+            projects.
           </T.BodyText>
           <T.BodyText>
-            I'm always growing my skillset and knowledge to become more familiar
-            with the variety of web technologies out there. I've become familiar
-            with many programming paradigms like object-orientated programming
-            and functional programming.
+            I'm always growing my skillset to become more familiar with the
+            variety of web technologies out there. My focus is to learn more
+            about Back-End Development and further reinforce my Typescript
+            knowledge.
           </T.BodyText>
         </S.Wrap>
       </S.Container>
