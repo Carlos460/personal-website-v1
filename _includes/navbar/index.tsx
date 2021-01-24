@@ -13,7 +13,7 @@ export default function Navbar() {
             <b>Contact</b>
           </a>
           <Link
-            href="https://drive.google.com/file/d/1QnxS-72U0BmqWf8ZIRuZ6k71yZPXEgAh/view?usp=sharing"
+            href="https://drive.google.com/file/d/13q-psNn3_mEgeb7OX1mOqeFBykKmOCXT/view?usp=sharing"
             passHref
           >
             <a className="link" target="_blank">
