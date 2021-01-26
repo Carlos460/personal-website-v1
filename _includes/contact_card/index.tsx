@@ -20,14 +20,18 @@ function ContactCard(props: any) {
         <S.ContactCard>
           <S.TitleContainer>
             <S.Title>
-              <h1>Web Developer</h1>
-              <p>Click Email to Copy</p>
+              <h1>Carlos Flores</h1>
+              <p>
+                A Web Developer working with Javascript, React.js, and Node.js!
+              </p>
+              <br />
+              <p>Click Email to copy</p>
             </S.Title>
           </S.TitleContainer>
           <S.ContactList>
             <S.ContactBar>
               <S.LogoContainer>
-                <S.Logo src={`/icons/gmail.png`}></S.Logo>
+                <S.Logo src={`/icons/gmail.png`} alt={`gmail logo`}></S.Logo>
               </S.LogoContainer>
               <S.ContactLink
                 onClick={() => {
@@ -43,7 +47,10 @@ function ContactCard(props: any) {
             >
               <S.ContactBar type="submit">
                 <S.LogoContainer>
-                  <S.Logo src={'/icons/linkedin.png'}></S.Logo>
+                  <S.Logo
+                    src={'/icons/linkedin.png'}
+                    alt={`linkedin logo`}
+                  ></S.Logo>
                 </S.LogoContainer>
                 <S.ContactLink>carlos-flores-460</S.ContactLink>
               </S.ContactBar>
@@ -54,6 +61,7 @@ function ContactCard(props: any) {
                   <S.Logo
                     style={{ filter: 'invert(1)' }}
                     src={`/icons/github.png`}
+                    alt={`github logo`}
                   ></S.Logo>
                 </S.LogoContainer>
                 <S.ContactLink>Carlos460</S.ContactLink>

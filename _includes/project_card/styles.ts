@@ -7,7 +7,7 @@ export const ProjectCardContainer = styled.section`
   flex-direction: row;
   transition: transform 0.2s ease;
 
-  margin: 48px auto 100px;
+  margin: 100px auto 100px;
   @media (max-width: 1600px) {
     flex-direction: column;
   }
@@ -57,6 +57,7 @@ export const DesccriptionContainer = styled.div`
     margin-bottom: 50px;
   }
 `;
+
 // Button
 export const ButtonContainer = styled.div`
   position: absolute;

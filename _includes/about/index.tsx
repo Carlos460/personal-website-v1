@@ -1,7 +1,15 @@
-import SkillCard from '@includes/skill_card';
+import SectionLink from '@includes/SectionLink';
 
 import * as S from './style';
 import * as T from '@includes/text';
+
+S.Button.defaultProps = {
+  theme: {
+    textColor: `var(--dark)`,
+    border: `solid transparent 2px`,
+    bgColor: `var(--primary)`,
+  },
+};
 
 export default function About() {
   return (
@@ -25,68 +33,16 @@ export default function About() {
             about Back-End Development and further reinforce my Typescript
             knowledge.
           </T.BodyText>
+          <S.ButtonContainer>
+            <form
+              action={`https://drive.google.com/file/d/1XeROqVfO1h99G9Kd_2I0yltY78lW0OpZ/view?usp=sharing`}
+              target={`_blank`}
+            >
+              <S.Button>Resume</S.Button>
+            </form>
+          </S.ButtonContainer>
         </S.Wrap>
-      </S.Container>
-      <S.Container>
-        <div style={{ textAlign: `center` }}>
-          <T.SubHeading>Technologies I Use Daily!</T.SubHeading>
-        </div>
-        <div
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `center`,
-            margin: `50px 0px`,
-          }}
-        >
-          <SkillCard imageUrl={`/icons/javascript.png`}>
-            <h3>JavaScript</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/html-5.png`}>
-            <h3>HTML 5</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/css3.png`}>
-            <h3>CSS 3</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/react.png`}>
-            <h3>React.js</h3>
-          </SkillCard>
-          <SkillCard translateY={35} imageUrl={`/icons/npm.svg`}>
-            <h3>NPM</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/git.png`}>
-            <h3>Git</h3>
-          </SkillCard>
-        </div>
-      </S.Container>
-      <S.Container>
-        <div style={{ textAlign: `center` }}>
-          <T.SubHeading>Technologies I've Used In Projects!</T.SubHeading>
-        </div>
-        <div
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `center`,
-            margin: `50px 0px`,
-          }}
-        >
-          <SkillCard imageUrl={`/icons/nodejs.png`}>
-            <h3>Node.js</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/python.png`}>
-            <h3>Python</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/typescript.png`}>
-            <h3>Typescript</h3>
-          </SkillCard>
-          <SkillCard invert={1} imageUrl={`/icons/expressjs.svg`}>
-            <h3>Express.js</h3>
-          </SkillCard>
-          <SkillCard imageUrl={`/icons/mongodb.svg`}>
-            <h3>MongoDB</h3>
-          </SkillCard>
-        </div>
+        <SectionLink linkTo={`#skills`}>Skills</SectionLink>
       </S.Container>
     </>
   );

@@ -1,6 +1,4 @@
 import Head from 'next/head';
-import Navbar from '@includes/navbar/index';
-import Footer from '@includes/footer/index';
 
 export default function DefaultLayout(props: {
   title: string;
@@ -23,10 +21,7 @@ export default function DefaultLayout(props: {
           width: '100%',
         }}
       >
-        <div style={{ maxWidth: '1800px', margin: '0px auto' }}>
-          {props.children}
-          <Footer></Footer>
-        </div>
+        <div style={{ margin: '0px auto' }}>{props.children}</div>
       </div>
 
       <style jsx global>{`
@@ -40,7 +35,7 @@ export default function DefaultLayout(props: {
           --dark: #131212;
           --dark-secondary: #202020;
           --dark-light: #252525;
-          --primary: #fcf700;
+          --primary: #ebe722;
           --primary-dark: #072336;
           --primary-light: #95d5ff;
           --secondary: #ffa742;
@@ -58,12 +53,6 @@ export default function DefaultLayout(props: {
           margin: 0px;
         }
       `}</style>
-      <script
-        type="text/javascript"
-        src="https://platform.linkedin.com/badges/js/profile.js"
-        async
-        defer
-      ></script>
     </>
   );
 }

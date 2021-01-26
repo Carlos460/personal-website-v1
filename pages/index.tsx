@@ -2,13 +2,15 @@
 import { GetStaticProps } from 'next';
 import { motion } from 'framer-motion';
 
+import SectionLink from '@includes/SectionLink';
 import Section from '@includes/section';
 import ProjectCard from '@includes/project_card';
 import Navbar from '@includes/navbar';
 import SkillCard from '@includes/skill_card';
 import About from '@includes/about';
+import ContactCard from '@includes/contact_card';
 
-import * as S from '@includes/text';
+import * as T from '@includes/text';
 
 import DefaultLayout from '@layouts/default_template';
 
@@ -19,25 +21,30 @@ const headFadeIn = {
 
 export default function Home(props: { projects: Array<object> }) {
   return (
-    <DefaultLayout title="Home">
-      <Section id={'heading'}>
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 0.5 }}
-          variants={headFadeIn}
+    <DefaultLayout title="Portfolio">
+      <Section bgImage={`url(/road.webp)`} id={'heading'}>
+        <div
+          className="overlay"
+          style={{
+            position: 'absolute',
+            zIndex: 0,
+            width: '100%',
+            height: '100%',
+            background: 'rgb(0,0,0,0.6)',
+          }}
         >
-          <div style={{ textAlign: 'center' }}>
-            <S.Heading>Hello there 😎</S.Heading>
-            <S.SubHeading>
-              I'm Carlos, a Web Developer working with Javascript, React.js, and
-              Node.js!
-            </S.SubHeading>
-          </div>
-          <Navbar />
-        </motion.div>
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            transition={{ delay: 0.5 }}
+            variants={headFadeIn}
+          >
+            <ContactCard />
+            <Navbar />
+          </motion.div>
+        </div>
       </Section>
-      <Section id={'portfolio'}>
+      <Section bgColor={`var(--dark)`} id={'portfolio'}>
         {props.projects.map((project: any, index: number) => {
           return (
             <ProjectCard
@@ -51,8 +58,68 @@ export default function Home(props: { projects: Array<object> }) {
           );
         })}
       </Section>
-      <Section id={`about`}>
+      <Section bgColor={`var(--dark-secondary)`} id={`about`}>
         <About />
+      </Section>
+      <Section bgColor={`var(--dark)`} id={`skills`}>
+        <div style={{ textAlign: `center` }}>
+          <T.SubHeading>Technologies I Use Daily!</T.SubHeading>
+        </div>
+        <div
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `center`,
+            margin: `50px 0px`,
+          }}
+        >
+          <SkillCard imageUrl={`/icons/javascript.png`}>
+            <h3>JavaScript</h3>
+          </SkillCard>
+          <SkillCard imageUrl={`/icons/html-5.png`}>
+            <h3>HTML 5</h3>
+          </SkillCard>
+          <SkillCard imageUrl={`/icons/css3.png`}>
+            <h3>CSS 3</h3>
+          </SkillCard>
+          <SkillCard imageUrl={`/icons/react.png`}>
+            <h3>React.js</h3>
+          </SkillCard>
+          <SkillCard translateY={35} imageUrl={`/icons/npm.svg`}>
+            <h3>NPM</h3>
+          </SkillCard>
+          <SkillCard imageUrl={`/icons/git.png`}>
+            <h3>Git</h3>
+          </SkillCard>
+        </div>
+        <div style={{ textAlign: `center` }}>
+          <T.SubHeading>Technologies I've Used In Projects!</T.SubHeading>
+        </div>
+        <div
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `center`,
+            margin: `50px 0px`,
+          }}
+        >
+          <SkillCard imageUrl={`/icons/nodejs.png`}>
+            <h3>Node.js</h3>
+          </SkillCard>
+          <SkillCard imageUrl={`/icons/python.png`}>
+            <h3>Python</h3>
+          </SkillCard>
+          <SkillCard imageUrl={`/icons/typescript.png`}>
+            <h3>Typescript</h3>
+          </SkillCard>
+          <SkillCard invert={1} imageUrl={`/icons/expressjs.svg`}>
+            <h3>Express.js</h3>
+          </SkillCard>
+          <SkillCard imageUrl={`/icons/mongodb.svg`}>
+            <h3>MongoDB</h3>
+          </SkillCard>
+        </div>
+        <SectionLink linkTo={`#heading`}>Back to top</SectionLink>
       </Section>
     </DefaultLayout>
   );

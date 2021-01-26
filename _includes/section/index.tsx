@@ -5,12 +5,21 @@ import { FunctionComponent } from 'react';
 
 type SectionProps = {
   id: string;
+  bgColor?: string;
+  bgImage?: string;
 };
 
-const Section: FunctionComponent<SectionProps> = ({ id, children }) => {
+const Section: FunctionComponent<SectionProps> = ({
+  bgImage,
+  bgColor,
+  id,
+  children,
+}) => {
   return (
     <>
-      <S.Container id={id}>{children}</S.Container>
+      <S.Container bgImage={bgImage} bgColor={bgColor} id={id}>
+        {children}
+      </S.Container>
     </>
   );
 };

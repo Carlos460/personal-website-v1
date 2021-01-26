@@ -1,25 +1,37 @@
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
   return (
     <div>
       <div className={`navbar`}>
         <ul className="link-list">
-          <a className="link" href="/#about">
-            <b>About</b>
-          </a>
-          <a className="link" href="/#contact">
-            <b>Contact</b>
-          </a>
-          <Link
-            href="https://drive.google.com/file/d/13q-psNn3_mEgeb7OX1mOqeFBykKmOCXT/view?usp=sharing"
-            passHref
-          >
-            <a className="link" target="_blank">
-              <b>Resume</b>
+          <li className="link-container">
+            <a className="link" href="/#about">
+              <motion.div whileHover={{ y: -3 }} whileTap={{ y: 1 }}>
+                <b>About</b>
+              </motion.div>
             </a>
-          </Link>
+          </li>
+          <li className="link-container">
+            <a className="link" href="/#portfolio">
+              <motion.div whileHover={{ y: -3 }} whileTap={{ y: 1 }}>
+                <b>Portfolio</b>
+              </motion.div>
+            </a>
+          </li>
+          <li className="link-container">
+            <Link
+              href="https://drive.google.com/file/d/1XeROqVfO1h99G9Kd_2I0yltY78lW0OpZ/view?usp=sharing"
+              passHref
+            >
+              <a className="link" rel="noreferrer" target="_blank">
+                <motion.div whileHover={{ y: -3 }} whileTap={{ y: 1 }}>
+                  <b>Resume</b>
+                </motion.div>
+              </a>
+            </Link>
+          </li>
         </ul>
       </div>
 
@@ -35,18 +47,19 @@ export default function Navbar() {
           padding: 0px 8px;
           display: flex;
           border-top: solid 2px var(--light-secondary);
+          border-bottom: solid 2px var(--light-secondary);
         }
 
-        .link {
+        .link-container {
           text-align: right;
           padding: 0.8rem 0rem;
           margin: 0px 15px;
-          text-decoration: none;
-          color: var(--light-secondary);
           transition: color 0.2s ease-out;
         }
-        .link:hover {
-          color: var(--primary);
+        .link {
+          margin: auto;
+          text-decoration: none;
+          color: var(--light-secondary);
         }
       `}</style>
     </div>

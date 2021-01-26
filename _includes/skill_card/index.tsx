@@ -11,6 +11,7 @@ export default function SkillCard(props: any) {
               invertValue={props.invert || 0}
               offSet={props.translateY}
               src={props.imageUrl}
+              alt={`skill image`}
             />
           </S.ImageWrapper>
 
